@@ -3,142 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Course Learning Reflections</title>
+    <title>Course Reflections</title>
     <style>
         body {
-            font-family: sans-serif;
-            margin: 20px;
+            font-family: Arial, sans-serif;
             line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
         }
-        h1, h2 {
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+        header h1 {
+            margin: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 2rem auto;
+        }
+        h2 {
             color: #333;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
         }
-        .reflection {
+        ul {
+            margin-left: 20px;
+        }
+        .section {
+            background-color: #fff;
+            padding: 1.5rem;
+            border-radius: 8px;
             margin-bottom: 2rem;
-            padding: 1rem;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .section h3 {
+            color: #333;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .section p {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        .section ul {
+            font-size: 0.9rem;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
 <body>
-    <h1>Course Learning Reflections</h1>
-
-    <div class="reflection">
-        <h2>1. Problem-Solving Techniques in Nature</h2>
-        <p>This course has highlighted the fascinating observation that many fundamental problem-solving techniques are mirrored in nature. 
+    <header>
+        <h1>Course Learning Reflections</h1>
+    </header>
+    <div class="container">
+        <div class="section">
+            <h2>1. Types of Problems in Nature</h2>
             <ul>
-                <li>**Iteration:** The cyclical nature of seasons, the rhythmic beating of a heart, and the repetitive patterns in biological systems all exemplify iterative processes.</li>
-                <li>**Recursion:** The branching structure of trees, the self-similarity observed in fractals, and the hierarchical organization of biological systems demonstrate the power of recursion.</li>
-                <li>**Backtracking:** The process of natural selection, where organisms evolve by "backtracking" from less successful variations, provides a compelling example of this technique.</li>
+                <li><strong>Iteration</strong>: Natural cycles like day/night or organism adaptations.</li>
+                <li><strong>Recursion</strong>: Patterns in trees, DNA, and problems like the Pingala series.</li>
+                <li><strong>Backtracking</strong>: Seen in evolution, N-Queens, and subset generation problems.</li>
             </ul>
-        </p>
-    </div>
-
-    <div class="reflection">
-        <h2>2. Space and Time Efficiency</h2>
-        <p>Understanding the concepts of space and time efficiency is crucial for developing effective algorithms. 
-            <ul>
-                <li>**Space Efficiency** refers to the amount of memory an algorithm uses during its execution.</li>
-                <li>**Time Efficiency** describes how the algorithm's running time scales with the size of the input data.</li>
-            </ul>
-            <p>By analyzing the order of growth of an algorithm's time complexity (e.g., constant, logarithmic, linear, quadratic, exponential), we can predict its performance on different input sizes and make informed decisions about which algorithm is most suitable for a given problem.</p>
         </div>
 
-    <div class="reflection">
-        <h2>3. Design Principles</h2>
-        <p>Several key design principles emerged throughout the course, shaping our approach to problem-solving:</p>
-        <ul>
-            <li>**Decomposition:** Breaking down complex problems into smaller, more manageable subproblems.</li>
-            <li>**Abstraction:** Identifying and focusing on the essential features of a problem while ignoring irrelevant details.</li>
-            <li>**Pattern Recognition:** Recognizing recurring patterns and applying previously learned solutions or techniques.</li>
-            <li>**Divide and Conquer:** Splitting a problem into smaller, independent subproblems, solving them recursively, and then combining the solutions.</li>
-            <li>**Greedy Algorithms:** Making locally optimal choices at each step in the hope of finding a global optimum.</li>
-            <li>**Dynamic Programming:** Breaking down a problem into overlapping subproblems and storing the solutions to these subproblems to avoid redundant calculations.</li>
-        </ul>
-    </div>
+        <div class="section">
+            <h2>2. Space and Time Efficiency</h2>
+            <p><strong>Space Efficiency:</strong> How much extra memory an algorithm needs.</p>
+            <p><strong>Time Efficiency:</strong> How fast an algorithm runs.</p>
+            <p>Efficient algorithms are faster, more scalable, and use fewer resources.</p>
+        </div>
 
-    <div class="reflection">
-        <h2>4. Data Structures: Trees and Graphs</h2>
-        <p>This course explored various data structures, with a focus on trees and graphs. 
+        <div class="section">
+            <h2>3. Design Principles and Concepts</h2>
             <ul>
-                <li>**Trees:** Hierarchical structures with a root node and branches. We explored different types of trees, including binary trees, binary search trees (BSTs), AVL trees, red-black trees, and heaps. Understanding their properties and operations is crucial for efficient data organization and retrieval.</li>
-                <li>**Graphs:** More general structures representing connections between nodes. We learned about graph traversal algorithms like Depth-First Search (DFS) and Breadth-First Search (BFS), which have applications in areas like social network analysis, web crawling, and pathfinding.</li>
+                <li><strong>Decomposition</strong>: Break problems into smaller parts.</li>
+                <li><strong>Pattern Recognition</strong>: Identify patterns to solve problems efficiently.</li>
+                <li><strong>Abstraction</strong>: Focus on key features and ignore details.</li>
             </ul>
-        </p>
+        </div>
+
+        <div class="section">
+            <h2>4. Tree and Graph Structures</h2>
+            <ul>
+                <li><strong>Tree Structures</strong>: Organize hierarchical data.</li>
+                <li><strong>Graph Traversals</strong>: DFS (deep search) vs BFS (wide search).</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>5. Sorting and Searching Algorithms</h2>
+            <ul>
+                <li><strong>Sorting</strong>: Algorithms to organize data (e.g., Merge Sort, Quick Sort).</li>
+                <li><strong>Searching</strong>: Algorithms to find data (e.g., Binary Search).</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>6. Applications of Graph Algorithms</h2>
+            <ul>
+                <li><strong>Spanning Trees</strong>: Minimize network costs.</li>
+                <li><strong>Shortest Path</strong>: Find the shortest route between nodes.</li>
+            </ul>
+        </div>
     </div>
-
-    <div class="reflection">
-        <h2>5. Sorting and Searching Algorithms</h2>
-        <p>Sorting and searching are fundamental algorithmic tasks. We explored a variety of sorting algorithms, including:</p>
-        <ul>
-            <li>**Bubble Sort:** Simple but inefficient for large datasets.</li>
-            <li>**Selection Sort:** Guarantees finding the minimum element in each pass.</li>
-            <li>**Insertion Sort:** Efficient for nearly sorted data.</li>
-            <li>**Merge Sort:** A stable and efficient divide-and-conquer algorithm.</li>
-            <li>**Quick Sort:** Generally very efficient, but can have worst-case performance in certain scenarios.</li>
-            <li>**Heap Sort:** Efficient and well-suited for priority queues.</li>
-        </ul>
-        <p>We also studied searching algorithms, such as:</p>
-        <ul>
-            <li>**Linear Search:** Simple but can be inefficient for large datasets.</li>
-            <li>**Binary Search:** Efficient for sorted data, providing logarithmic time complexity.</li>
-        </ul>
-    </div>
-
-    <div class="reflection">
-        <h2>6. String Matching Algorithms</h2>
-        <p>String matching is a crucial task in many applications, such as text editors, search engines, and bioinformatics. We explored various string matching algorithms, including:</p>
-        <ul>
-            <li>**Brute Force:** Simple but inefficient, comparing each character of the pattern with the text.</li>
-            <li>**Knuth-Morris-Pratt (KMP):** Preprocesses the pattern to avoid unnecessary comparisons.</li>
-            <li>**Rabin-Karp:** Uses hashing to quickly compare substrings of the text with the pattern.</li>
-            <li>**Boyer-Moore:** Highly efficient, utilizing "good suffix" and "bad character" heuristics to skip large portions of the text.</li>
-        </ul>
-    </div>
-
-    <div class="reflection">
-        <h2>7. Graph Algorithms and Their Importance</h2>
-        <p>Graph algorithms have numerous applications in various fields:</p>
-        <ul>
-            <li>**Shortest Path Algorithms:** 
-                <ul>
-                    <li>Dijkstra's Algorithm: Finds the shortest paths from a single source node to all other nodes in a weighted graph.</li>
-                    <li>Bellman-Ford Algorithm: Can handle negative edge weights, but is less efficient than Dijkstra's for graphs without negative cycles.</li>
-                    <li>Floyd-Warshall Algorithm: Finds the shortest paths between all pairs of nodes in a graph.</li>
-                </ul>
-            </li>
-            <li>**Minimum Spanning Tree Algorithms:**
-                <ul>
-                    <li>Kruskal's Algorithm: Constructs a minimum spanning tree by iteratively adding the least-cost edge that does not create a cycle.</li>
-                    <li>Prim's Algorithm: Starts with a single node and gradually grows the tree by adding the nearest neighbor.</li>
-                </ul>
-            </li>
-            <li>**Applications:**
-                <ul>
-                    <li>Navigation systems (GPS)</li>
-                    <li>Social network analysis</li>
-                    <li>Network routing</li>
-                    <li>Transportation planning</li>
-                    <li>Circuit design</li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-
-    <div class="reflection">
-        <h2>8. Design Techniques</h2>
-        <p>This course emphasized the importance of understanding various design techniques for developing efficient algorithms:</p>
-        <ul>
-            <li>**Brute Force:** A straightforward approach that may be inefficient but serves as a baseline for comparison.</li>
-            <li>**Divide and Conquer:** Breaking down a problem into smaller subproblems, solving them recursively, and then combining the solutions (e.g., merge sort, quicksort).</li>
-            <li>**Greedy Algorithms:** Making locally optimal choices at each step, hoping to arrive at a globally optimal solution.</li>
-            <li>**Dynamic Programming:** Breaking down a problem into overlapping subproblems and storing the solutions to these subproblems to avoid redundant calculations.</li>
-            <li>**Backtracking:** Exploring different paths in a search space, systematically undoing choices that lead to dead ends.</li>
-        </ul>
-    </div>
-
-    <p>This course provided a strong foundation in fundamental algorithmic concepts and data structures. I have gained a deeper understanding of how to analyze problems, design efficient solutions, and evaluate the performance of different algorithms. These skills will be invaluable in my future academic and professional endeavors.</p>
-
+    <footer>
+        <p>&copy; 2024 Course Reflections </p>
+    </footer>
 </body>
 </html>
+
