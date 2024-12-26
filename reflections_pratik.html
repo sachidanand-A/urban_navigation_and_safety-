@@ -1,230 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Course Learning Reflections</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-  <style>
-    /* Global Styles */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh; 
-    }
-
-    /* Header Styles */
-    header {
-      background-color: #f4419a;
-      color: white;
-      text-align: center;
-      padding: 2rem;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-
-    p {
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-    }
-
-    /* Section Styles */
-    section {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
-      padding: 20px;
-      max-width: 800px; /* Limit width for better readability */
-      margin: 0 auto; /* Center content horizontally */
-    }
-
-    .reflection {
-      background-color: #fff;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      transition: box-shadow 0.3s ease-in-out;
-    }
-
-    .reflection:hover {
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-    }
-
-    h2 {
-      color: #f4419a;
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 2rem; /* Indent list items */
-    }
-
-    ul li {
-      background-color: #fbe9f2;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      border-radius: 5px;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 1rem;
-    }
-
-    table th, table td {
-      padding: 1rem;
-      border: 1px solid #eaeaea;
-      text-align: left;
-    }
-
-    table th {
-      background-color: #f4419a;
-      color: white;
-    }
-
-    a {
-      color: #f4419a;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    /* Responsive Styles */
-    @media (max-width: 600px) {
-      section {
-        grid-template-columns: 1fr;
-      }
-
-      h1 {
-        font-size: 2rem;
-      }
-
-      h2 {
-        font-size: 1.5rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Learning Reflections</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .reflection {
+            margin-bottom: 2rem;
+            padding: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
-  <header>
     <h1>Course Learning Reflections</h1>
-    <p>Reflections on Problem-Solving Techniques, Efficiency, Design Principles, and More</p>
-  </header>
 
-  <section>
     <div class="reflection">
-      <h2>1. What Are the Kinds of Problems We See in Nature?</h2>
-      <ul>
-        <li><strong>Iteration:</strong> Natural cycles like day and night, and organisms adapting to environmental conditions.</li>
-        <li><strong>Recursion:</strong> Branching of trees and the DNA molecule's structure and ancient tower of brahma problem and the game of pingala series and more.</li>
-        <li><strong>Backtracking:</strong> Seen in natural selection and Darwin's theory, where non-functional traits are pruned and in n queens problem and generaing the subsets and the all the possible words from the phone's digit and knight tour problem.</li>
-      </ul>
+        <h2>1. Problem-Solving Techniques in Nature</h2>
+        <p>This course has highlighted the fascinating observation that many fundamental problem-solving techniques are mirrored in nature. 
+            <ul>
+                <li>**Iteration:** The cyclical nature of seasons, the rhythmic beating of a heart, and the repetitive patterns in biological systems all exemplify iterative processes.</li>
+                <li>**Recursion:** The branching structure of trees, the self-similarity observed in fractals, and the hierarchical organization of biological systems demonstrate the power of recursion.</li>
+                <li>**Backtracking:** The process of natural selection, where organisms evolve by "backtracking" from less successful variations, provides a compelling example of this technique.</li>
+            </ul>
+        </p>
     </div>
 
     <div class="reflection">
-      <h2>2. Space and Time Efficiency</h2>
-      <p><strong>Space Efficiency:</strong> The additional space required by an algorithm.</p>
-      <p><strong>Time Efficiency:</strong> The total running time of an algorithm.</p>
-      <p>Efficient algorithms deliver quicker results, scale better, and are more resource-efficient.</p>
-      <table>
-        <tr>
-          <th>Class of Problem</th>
-          <th>Order of Growth</th>
-        </tr>
-        <tr>
-          <td>Runtime remains constant regardless of input size</td>
-          <td>Constant</td>
-        </tr>
-        <tr>
-          <td>Runtime grows logarithmically with input size</td>
-          <td>Logarithmic</td>
-        </tr>
-        <tr>
-          <td>Runtime grows proportionally with input size</td>
-          <td>Linear</td>
-        </tr>
-        <tr>
-          <td>Runtime grows faster than linear but slower than quadratic</td>
-          <td>Linear Logarithmic</td>
-        </tr>
-        <tr>
-          <td>Runtime grows quadratically (e.g., nested loops)</td>
-          <td>Quadratic</td>
-        </tr>
-        <tr>
-          <td>Runtime grows steeper than quadratic</td>
-          <td>Cubic</td>
-        </tr>
-        <tr>
-          <td>Runtime grows exponentially with input size</td>
-          <td>Exponential</td>
-        </tr>
-      </table>
+        <h2>2. Space and Time Efficiency</h2>
+        <p>Understanding the concepts of space and time efficiency is crucial for developing effective algorithms. 
+            <ul>
+                <li>**Space Efficiency** refers to the amount of memory an algorithm uses during its execution.</li>
+                <li>**Time Efficiency** describes how the algorithm's running time scales with the size of the input data.</li>
+            </ul>
+            <p>By analyzing the order of growth of an algorithm's time complexity (e.g., constant, logarithmic, linear, quadratic, exponential), we can predict its performance on different input sizes and make informed decisions about which algorithm is most suitable for a given problem.</p>
+        </div>
+
+    <div class="reflection">
+        <h2>3. Design Principles</h2>
+        <p>Several key design principles emerged throughout the course, shaping our approach to problem-solving:</p>
+        <ul>
+            <li>**Decomposition:** Breaking down complex problems into smaller, more manageable subproblems.</li>
+            <li>**Abstraction:** Identifying and focusing on the essential features of a problem while ignoring irrelevant details.</li>
+            <li>**Pattern Recognition:** Recognizing recurring patterns and applying previously learned solutions or techniques.</li>
+            <li>**Divide and Conquer:** Splitting a problem into smaller, independent subproblems, solving them recursively, and then combining the solutions.</li>
+            <li>**Greedy Algorithms:** Making locally optimal choices at each step in the hope of finding a global optimum.</li>
+            <li>**Dynamic Programming:** Breaking down a problem into overlapping subproblems and storing the solutions to these subproblems to avoid redundant calculations.</li>
+        </ul>
     </div>
 
     <div class="reflection">
-      <h2>3. Takeaways from Design Principles</h2>
-      <ul>
-        <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Algorithmic Concepts</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 20px;
-    }
-    h1 {
-      text-align: center;
-      color: #2c3e50;
-    }
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
-    li {
-      background: #f4f4f4;
-      margin: 10px 0;
-      padding: 10px;
-      border: 1px solid #ddd;
-      border-radius: 5px;
-    }
-    li span {
-      font-weight: bold;
-      color: #3498db;
-    }
-  </style>
-</head>
-<body>
-  <h1>Algorithmic Concepts</h1>
-  <ul>
-    <li><span>Decomposition:</span> Breaks a large problem into smaller sub-problems, making it easier to manage and solve we have seen it in the activity of zombie child detection carried out in lab 1.</li>
-    <li><span>Pattern Recognition:</span> Identifies recurring patterns to generalize solutions and transfer knowledge across domains we have seen it in representation system activity in lab 1 and  forts of india from portfolio.</li>
-    <li><span>Abstraction:</span> Simplifies a problem by focusing on key features and ignoring unnecessary details we have seen it in  shapes and sizes of activity in lab 1 and guernica and abstrack model in portfoloio assignment.</li>
-    <li><span>Brave and Cautious Travel:</span> Refers to graph traversal methods: "Brave" is Depth-First Search (DFS), while "Cautious" is Breadth-First Search (BFS).</li>
-    <li><span>Pruning:</span> Eliminates irrelevant parts of a problem or data set to improve efficiency, as used in search algorithms like N-Queens and subset generation problem.</li>
-    <li><span>Lazy Propagation/Evaluation:</span> Delays updates in data structures like segment trees until necessary, optimizing performance.</li>
-    <li><span>Sliding Window:</span> Maintains relevant information within a moving window over data to optimize sub-array problems.</li>
-    <li><span>Level Order Traversal:</span> Systematically visits nodes level by level, commonly used in BFS of trees.</li>
-    <li><span>Hierarchical Data:</span> Organizes data in a parent-child tree structure, aiding in efficient navigation and
+        <h2>4. Data Structures: Trees and Graphs</h2>
+        <p>This course explored various data structures, with a focus on trees and graphs. 
+            <ul>
+                <li>**Trees:** Hierarchical structures with a root node and branches. We explored different types of trees, including binary trees, binary search trees (BSTs), AVL trees, red-black trees, and heaps. Understanding their properties and operations is crucial for efficient data organization and retrieval.</li>
+                <li>**Graphs:** More general structures representing connections between nodes. We learned about graph traversal algorithms like Depth-First Search (DFS) and Breadth-First Search (BFS), which have applications in areas like social network analysis, web crawling, and pathfinding.</li>
+            </ul>
+        </p>
+    </div>
+
+    <div class="reflection">
+        <h2>5. Sorting and Searching Algorithms</h2>
+        <p>Sorting and searching are fundamental algorithmic tasks. We explored a variety of sorting algorithms, including:</p>
+        <ul>
+            <li>**Bubble Sort:** Simple but inefficient for large datasets.</li>
+            <li>**Selection Sort:** Guarantees finding the minimum element in each pass.</li>
+            <li>**Insertion Sort:** Efficient for nearly sorted data.</li>
+            <li>**Merge Sort:** A stable and efficient divide-and-conquer algorithm.</li>
+            <li>**Quick Sort:** Generally very efficient, but can have worst-case performance in certain scenarios.</li>
+            <li>**Heap Sort:** Efficient and well-suited for priority queues.</li>
+        </ul>
+        <p>We also studied searching algorithms, such as:</p>
+        <ul>
+            <li>**Linear Search:** Simple but can be inefficient for large datasets.</li>
+            <li>**Binary Search:** Efficient for sorted data, providing logarithmic time complexity.</li>
+        </ul>
+    </div>
+
+    <div class="reflection">
+        <h2>6. String Matching Algorithms</h2>
+        <p>String matching is a crucial task in many applications, such as text editors, search engines, and bioinformatics. We explored various string matching algorithms, including:</p>
+        <ul>
+            <li>**Brute Force:** Simple but inefficient, comparing each character of the pattern with the text.</li>
+            <li>**Knuth-Morris-Pratt (KMP):** Preprocesses the pattern to avoid unnecessary comparisons.</li>
+            <li>**Rabin-Karp:** Uses hashing to quickly compare substrings of the text with the pattern.</li>
+            <li>**Boyer-Moore:** Highly efficient, utilizing "good suffix" and "bad character" heuristics to skip large portions of the text.</li>
+        </ul>
+    </div>
+
+    <div class="reflection">
+        <h2>7. Graph Algorithms and Their Importance</h2>
+        <p>Graph algorithms have numerous applications in various fields:</p>
+        <ul>
+            <li>**Shortest Path Algorithms:** 
+                <ul>
+                    <li>Dijkstra's Algorithm: Finds the shortest paths from a single source node to all other nodes in a weighted graph.</li>
+                    <li>Bellman-Ford Algorithm: Can handle negative edge weights, but is less efficient than Dijkstra's for graphs without negative cycles.</li>
+                    <li>Floyd-Warshall Algorithm: Finds the shortest paths between all pairs of nodes in a graph.</li>
+                </ul>
+            </li>
+            <li>**Minimum Spanning Tree Algorithms:**
+                <ul>
+                    <li>Kruskal's Algorithm: Constructs a minimum spanning tree by iteratively adding the least-cost edge that does not create a cycle.</li>
+                    <li>Prim's Algorithm: Starts with a single node and gradually grows the tree by adding the nearest neighbor.</li>
+                </ul>
+            </li>
+            <li>**Applications:**
+                <ul>
+                    <li>Navigation systems (GPS)</li>
+                    <li>Social network analysis</li>
+                    <li>Network routing</li>
+                    <li>Transportation planning</li>
+                    <li>Circuit design</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="reflection">
+        <h2>8. Design Techniques</h2>
+        <p>This course emphasized the importance of understanding various design techniques for developing efficient algorithms:</p>
+        <ul>
+            <li>**Brute Force:** A straightforward approach that may be inefficient but serves as a baseline for comparison.</li>
+            <li>**Divide and Conquer:** Breaking down a problem into smaller subproblems, solving them recursively, and then combining the solutions (e.g., merge sort, quicksort).</li>
+            <li>**Greedy Algorithms:** Making locally optimal choices at each step, hoping to arrive at a globally optimal solution.</li>
+            <li>**Dynamic Programming:** Breaking down a problem into overlapping subproblems and storing the solutions to these subproblems to avoid redundant calculations.</li>
+            <li>**Backtracking:** Exploring different paths in a search space, systematically undoing choices that lead to dead ends.</li>
+        </ul>
+    </div>
+
+    <p>This course provided a strong foundation in fundamental algorithmic concepts and data structures. I have gained a deeper understanding of how to analyze problems, design efficient solutions, and evaluate the performance of different algorithms. These skills will be invaluable in my future academic and professional endeavors.</p>
+
+</body>
+</html>
