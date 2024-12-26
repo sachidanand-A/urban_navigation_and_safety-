@@ -3,55 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Course Reflections</title>
+    <title>Course Learning Reflections</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f7f7f7;
+            line-height: 1.6;
         }
+
         header {
             background-color: #333;
             color: white;
             text-align: center;
-            padding: 1rem 0;
+            padding: 1rem;
         }
+
         header h1 {
             margin: 0;
+            font-size: 2.5rem;
         }
+
         .container {
-            width: 80%;
+            width: 85%;
             margin: 2rem auto;
         }
+
+        .section {
+            background-color: white;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
         h2 {
             color: #333;
             font-size: 1.8rem;
             margin-bottom: 1rem;
         }
+
+        h3 {
+            font-size: 1.4rem;
+            color: #444;
+        }
+
+        p, ul {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
         ul {
             margin-left: 20px;
         }
-        .section {
-            background-color: #fff;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        .section h3 {
-            color: #333;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        .section p {
-            font-size: 1rem;
-            margin-bottom: 1rem;
-        }
-        .section ul {
-            font-size: 0.9rem;
-        }
+
         footer {
             background-color: #333;
             color: white;
@@ -67,59 +74,94 @@
     <header>
         <h1>Course Learning Reflections</h1>
     </header>
+
     <div class="container">
+        <!-- Section 1 -->
         <div class="section">
             <h2>1. Types of Problems in Nature</h2>
-            <ul>
-                <li><strong>Iteration</strong>: Natural cycles like day/night or organism adaptations.</li>
-                <li><strong>Recursion</strong>: Patterns in trees, DNA, and problems like the Pingala series.</li>
-                <li><strong>Backtracking</strong>: Seen in evolution, N-Queens, and subset generation problems.</li>
-            </ul>
+            <p><strong>Iteration:</strong> Natural cycles like day and night, or organisms adapting to environmental conditions.</p>
+            <p><strong>Recursion:</strong> Patterns like the branching of trees, the structure of DNA, ancient problems like the Tower of Brahma, and the Pingala series.</p>
+            <p><strong>Backtracking:</strong> Seen in natural selection and problems like the N-Queens, subset generation, generating possible words from phone digits, and Knight's Tour.</p>
         </div>
 
+        <!-- Section 2 -->
         <div class="section">
             <h2>2. Space and Time Efficiency</h2>
-            <p><strong>Space Efficiency:</strong> How much extra memory an algorithm needs.</p>
-            <p><strong>Time Efficiency:</strong> How fast an algorithm runs.</p>
-            <p>Efficient algorithms are faster, more scalable, and use fewer resources.</p>
-        </div>
-
-        <div class="section">
-            <h2>3. Design Principles and Concepts</h2>
+            <h3>Space Efficiency</h3>
+            <p>The additional space required by an algorithm.</p>
+            <h3>Time Efficiency</h3>
+            <p>The total running time of an algorithm.</p>
+            <p>Efficient algorithms are faster, scale better, and use fewer resources. Here's an overview of how the growth of time complexity varies based on the input size:</p>
             <ul>
-                <li><strong>Decomposition</strong>: Break problems into smaller parts.</li>
-                <li><strong>Pattern Recognition</strong>: Identify patterns to solve problems efficiently.</li>
-                <li><strong>Abstraction</strong>: Focus on key features and ignore details.</li>
+                <li><strong>Constant:</strong> No change in time, regardless of input size.</li>
+                <li><strong>Logarithmic:</strong> Time grows slowly as input increases.</li>
+                <li><strong>Linear:</strong> Time grows directly with input size.</li>
+                <li><strong>Linear Logarithmic:</strong> Time grows faster than linear but slower than quadratic.</li>
+                <li><strong>Quadratic:</strong> Time grows quickly (e.g., nested loops).</li>
+                <li><strong>Cubic:</strong> Time grows even faster than quadratic.</li>
+                <li><strong>Exponential:</strong> Time grows rapidly with input size.</li>
             </ul>
         </div>
 
+        <!-- Section 3 -->
         <div class="section">
-            <h2>4. Tree and Graph Structures</h2>
+            <h2>3. Design Principles and Takeaways</h2>
+            <p>Here are some key algorithmic design principles we've learned:</p>
             <ul>
-                <li><strong>Tree Structures</strong>: Organize hierarchical data.</li>
-                <li><strong>Graph Traversals</strong>: DFS (deep search) vs BFS (wide search).</li>
+                <li><strong>Decomposition:</strong> Breaking down a large problem into smaller, manageable sub-problems (e.g., Zombie Child Detection in Lab 1).</li>
+                <li><strong>Pattern Recognition:</strong> Identifying recurring patterns to generalize solutions (e.g., Representation System Activity in Lab 1).</li>
+                <li><strong>Abstraction:</strong> Simplifying a problem by focusing on the key aspects and ignoring unnecessary details (e.g., Shapes and Sizes activity in Lab 1).</li>
+                <li><strong>Brave and Cautious Travel:</strong> Graph traversal methods—DFS (Brave) vs BFS (Cautious).</li>
+                <li><strong>Pruning:</strong> Removing irrelevant parts of a problem to improve efficiency (e.g., N-Queens problem).</li>
+                <li><strong>Lazy Evaluation:</strong> Delaying updates until needed to optimize performance.</li>
+                <li><strong>Sliding Window:</strong> Keeps relevant information within a moving window for optimized problem-solving.</li>
+                <li><strong>Level Order Traversal:</strong> A systematic, level-by-level tree traversal (BFS).</li>
+                <li><strong>Hierarchical Data:</strong> Organizing data in a parent-child structure for better navigation.</li>
+                <li><strong>Edge Relaxation:</strong> Updating the shortest path in graphs (e.g., Dijkstra's Algorithm).</li>
+                <li><strong>Balancing and Rotations:</strong> Ensuring efficient tree structures (e.g., AVL trees).</li>
+                <li><strong>Pre-Computing:</strong> Storing frequently used values to enhance algorithm performance (e.g., Sparse Table).</li>
+                <li><strong>Memoization:</strong> Storing function results to avoid redundant calculations (used in recursive algorithms).</li>
+                <li><strong>Invariants:</strong> Ensuring conditions stay constant during computations, simplifying debugging.</li>
+                <li><strong>Shortest Path Trees:</strong> Used in routing and navigation to find the shortest paths in graphs.</li>
             </ul>
         </div>
 
+        <!-- Section 4 -->
         <div class="section">
-            <h2>5. Sorting and Searching Algorithms</h2>
+            <h2>4. Hierarchical Data and Tree Structures</h2>
+            <p>To manage hierarchical data efficiently, we started with basic tree structures and gradually learned more advanced types:</p>
             <ul>
-                <li><strong>Sorting</strong>: Algorithms to organize data (e.g., Merge Sort, Quick Sort).</li>
-                <li><strong>Searching</strong>: Algorithms to find data (e.g., Binary Search).</li>
+                <li><strong>Tree:</strong> Represents hierarchical relationships, but it is not efficient for searching or organizing data.</li>
+                <li><strong>Binary Tree:</strong> Each node has two children, but searching and insertion are still not optimal.</li>
+                <li><strong>Binary Search Tree (BST):</strong> A binary tree with the left child smaller and the right child larger. It speeds up searches but can be inefficient if unbalanced.</li>
+                <li><strong>2-3 Tree:</strong> A self-balancing tree where each node has 2 or 3 children, ensuring efficient searching with O(log n) complexity.</li>
+                <li><strong>AVL Tree:</strong> A balanced binary tree using rotations to ensure optimal height and efficient operations.</li>
+                <li><strong>Red-Black Tree:</strong> A type of self-balancing tree that reduces the number of rotations during insertion and deletion.</li>
+                <li><strong>Heap (Priority Queue):</strong> A tree used for efficiently accessing the highest or lowest priority element.</li>
+                <li><strong>Trie:</strong> A tree structure optimized for storing strings and performing fast prefix-based searches.</li>
             </ul>
         </div>
 
+        <!-- Section 5 -->
         <div class="section">
-            <h2>6. Applications of Graph Algorithms</h2>
+            <h2>5. Array Query Algorithms</h2>
+            <h3>Principles of Array Query Algorithms</h3>
             <ul>
-                <li><strong>Spanning Trees</strong>: Minimize network costs.</li>
-                <li><strong>Shortest Path</strong>: Find the shortest route between nodes.</li>
+                <li><strong>Precomputation:</strong> Calculating values in advance for faster queries.</li>
+                <li><strong>Efficiency:</strong> Reducing time complexity from linear to logarithmic or constant time.</li>
+                <li><strong>Space-Time Tradeoff:</strong> Balancing memory usage with query time efficiency.</li>
+                <li><strong>Dynamic vs Static Data:</strong> Some algorithms are suited for datasets with frequent updates (e.g., Segment Trees), while others are better for static datasets (e.g., Sparse Tables).</li>
             </ul>
         </div>
-    </div>
-    <footer>
-        <p>&copy; 2024 Course Reflections </p>
-    </footer>
-</body>
-</html>
+
+        <!-- Section 6 -->
+        <div class="section">
+            <h2>6. Sorting and Searching Algorithms</h2>
+            <h3>Sorting Algorithms</h3>
+            <ul>
+                <li><strong>Bubble Sort:</strong> A simple algorithm that swaps adjacent elements. Time complexity: O(n²).</li>
+                <li><strong>Selection Sort:</strong> Finds the minimum element and swaps it. Time complexity: O(n²).</li>
+                <li><strong>Insertion Sort:</strong> Efficient for nearly sorted data. Time complexity: O(n²), but Ω(n) in best case.</li>
+                <li><strong>Merge Sort:</strong> A
+
 
