@@ -1,90 +1,380 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team Introduction</title>
-    <link rel="stylesheet" href="proj_introstylesheet.css"> <!-- Correctly linked CSS -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-</head>
+    <title>Team Overview - Urban Navigation and Safety</title>
+    <style>
+        :root {
+            --primary: #2d3436;
+            --secondary: #0984e3;
+            --accent: #00cec9;
+            --background: #1a1a2e;
+            --card-bg: #1e272e;
+            --text-primary: #dfe6e9;
+            --text-secondary: #b2bec3;
+            --gradient-start: #6c5ce7;
+            --gradient-end: #00cec9;
+        }
 
-<body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="businesscases.html">Business Cases</a></li>
-            <li><a href="reflections_team.html">Course Reflections</a></li>
-        </ul>
-    </nav>
-    <header>
-        <h1>Urban Navigation and Safety</h1>
-    </header>
-    <main>
-        <section>
-          
-            <h3>Overview</h3>
-            <p>
-                Our project involves designing and developing a sustainable Urban Navigation and Safety systems covering 1500 square kilometers smart city. The objective is to create a technologically advanced, sustainable, and citizen-centric urban environment navigation and safety systems that enhances quality of life, fosters economic growth, and serves as a model for sustainable urban development.
-            </p>
-            <h3>Key Features:</h3>
-            <ul>
-                <li>Leverage advanced algorithms for efficient Navigation and Safety.</li>
-                <li>Use data-driven insights for optimizing traffic and public weather.</li>
-                <li>Integrate modern technologies to ensure sustainability and citizen engagement.</li>
-            </ul>
-            <p>
-                By combining efficient algorithms and data structures, we aim to develop solutions that are innovative and impactful.
-            </p>
-        </section>
-        <section>
-            <h2>Problem Space and How It Was Arrived At</h2>
-            <p><i><b></b></i>Urban navigation and safety face challenges like dynamic traffic, GPS inaccuracies, and infrastructure limitations, complicating efficient and safe travel. Pedestrian and cyclist interactions, multimodal transport, and unpredictable road user behaviors add complexity. Environmental hazards, crime risks, and accident prevention require robust systems. Data accuracy, IoT integration, and computational constraints limit technological solutions. Legal, equity, and urban planning gaps further hinder progress. Emerging solutions include AI for traffic prediction, connected vehicles , advanced sensors, and crowdsourced data for real-time insights. Addressing these challenges requires collaboration across urban planning, technology, and policy to create safer, more efficient urban transportation systems..</p>
-            <!-- Additional content remains the same -->
-        </section>
-     <section>
-    <h2>Team Members</h2>
-    <div class="team-grid">
-        <div class="team-member">
-            <a href="#" class="team-member-link">
-                <div class="team-member-content">
-                    <h4>Pratik</h4>
-                    <p>USN: 01FE23BCI114</p>
-                    <p>Roll no: 152</p>
-                </div>
-            </a>
-        </div>
-        <div class="team-member">
-            <a href="#" class="team-member-link">
-                <div class="team-member-content">
-                    <h4>Sachidanand</h4>
-                    <p>USN: 01FE23BCI119</p>
-                    <p>Roll no: 156</p>
-                </div>
-            </a>
-        </div>
-        <div class="team-member">
-            <a href="#" class="team-member-link">
-                <div class="team-member-content">
-                    <h4>Prachi</h4>
-                    <p>USN: 01FE23BCI</p>
-                    <p>Roll no: </p>
-                </div>
-            </a>
-        </div>
-        <div class="team-member">
-            <a href="#" class="team-member-link">
-                <div class="team-member-content">
-                    <h4>Vaishnavi</h4>
-                    <p>USN: 01FE23BCI</p>
-                    <p>Roll no: </p>
-                </div>
-            </a>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            color: var(--text-primary);
+            background-color: var(--background);
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        .main-header {
+            background: rgba(30, 39, 46, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: transform 0.3s ease;
+        }
+
+        .main-nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 8rem 0 4rem;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(108, 92, 231, 0.1), rgba(0, 206, 201, 0.1));
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Overview Section */
+        .overview-section {
+            padding: 4rem 0;
+            background: var(--card-bg);
+            margin: 2rem 0;
+            border-radius: 16px;
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 2rem;
+        }
+
+        .features-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .features-list li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        /* Team Grid */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .team-member {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .team-member-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .team-member-content {
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(108, 92, 231, 0.1), rgba(0, 206, 201, 0.1));
+        }
+
+        .team-member h4 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .team-member p {
+            color: var(--text-secondary);
+            margin: 0.5rem 0;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .main-nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+    <!-- Update the navigation section -->
+<header class="main-header">
+    <div class="container">
+        <div class="header-content">
+            <h1 class="logo">TEAM 4</h1>
+            <nav class="main-nav">
+                <a href="#" class="nav-link">
+                    <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                    Github
+                </a>
+                <a href="index.html" class="nav-link">
+                    <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                    </svg>
+                    Home
+                </a>
+                <a href="overview.html" class="nav-link">
+                    <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                        <polyline points="7.5 4.21 12 6.81 16.5 4.21"></polyline>
+                        <polyline points="7.5 19.79 7.5 14.6 3 12"></polyline>
+                        <polyline points="21 12 16.5 14.6 16.5 19.79"></polyline>
+                        <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                        <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                    </svg>
+                    Overview
+                </a>
+                <a href="reflection.html" class="nav-link">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 14c.2-1 .7-1.7 1.5-2.5M9 14c-.2-1-.7-1.7-1.5-2.5M6 9h.01M18 9h.01"></path>
+                        <path d="M12 2a8 8 0 0 0-8 8v1a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4v-1a8 8 0 0 0-8-8z"></path>
+                        <path d="M9.1 16.3a2.8 2.8 0 0 0 5.8 0"></path>
+                    </svg>
+                    Reflections
+                </a>
+            </nav>
         </div>
     </div>
-</section>
+</header>
+</head>
+<body>
+   <!-- Update the navigation section -->
+<header class="main-header">
+    <div class="container">
+        <div class="header-content">
+            <h1 class="logo">TEAM 4</h1>
+            <nav class="main-nav">
+                <a href="#" class="nav-link">
+                    <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                    Github
+                </a>
+                <a href="index.html" class="nav-link">
+                    <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                    </svg>
+                    Home
+                </a>
+                <a href="overview.html" class="nav-link">
+                    <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                        <polyline points="7.5 4.21 12 6.81 16.5 4.21"></polyline>
+                        <polyline points="7.5 19.79 7.5 14.6 3 12"></polyline>
+                        <polyline points="21 12 16.5 14.6 16.5 19.79"></polyline>
+                        <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                        <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                    </svg>
+                    Overview
+                </a>
+                <a href="reflection.html" class="nav-link">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 14c.2-1 .7-1.7 1.5-2.5M9 14c-.2-1-.7-1.7-1.5-2.5M6 9h.01M18 9h.01"></path>
+                        <path d="M12 2a8 8 0 0 0-8 8v1a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4v-1a8 8 0 0 0-8-8z"></path>
+                        <path d="M9.1 16.3a2.8 2.8 0 0 0 5.8 0"></path>
+                    </svg>
+                    Reflections
+                </a>
+            </nav>
+        </div>
+    </div>
+</header>
 
+    <section class="hero">
+        <div class="container">
+            <h1>Urban Navigation and Safety</h1>
+            <p>Creating sustainable and intelligent urban navigation systems for the cities of tomorrow</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <section class="overview-section fade-in">
+            <div class="container">
+                <h2 class="gradient-text">Project Overview</h2>
+                <p>
+                    Our project involves designing and developing sustainable Urban Navigation and Safety systems covering 1500 square kilometers smart city. The objective is to create a technologically advanced, sustainable, and citizen-centric urban environment navigation and safety systems that enhances quality of life, fosters economic growth, and serves as a model for sustainable urban development.
+                </p>
+                <h3>Key Features:</h3>
+                <ul class="features-list">
+                    <li>Leverage advanced algorithms for efficient Navigation and Safety</li>
+                    <li>Use data-driven insights for optimizing traffic and public weather</li>
+                    <li>Integrate modern technologies to ensure sustainability and citizen engagement</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="overview-section fade-in">
+            <div class="container">
+                <h2 class="gradient-text">Problem Space</h2>
+                <p>
+                    Urban navigation and safety face challenges like dynamic traffic, GPS inaccuracies, and infrastructure limitations, complicating efficient and safe travel. Pedestrian and cyclist interactions, multimodal transport, and unpredictable road user behaviors add complexity. Environmental hazards, crime risks, and accident prevention require robust systems. Data accuracy, IoT integration, and computational constraints limit technological solutions. Legal, equity, and urban planning gaps further hinder progress. Emerging solutions include AI for traffic prediction, connected vehicles, advanced sensors, and crowdsourced data for real-time insights.
+                </p>
+            </div>
+        </section>
+
+        <section class="fade-in">
+            <h2 class="gradient-text">Team Members</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-member-content">
+                        <h4>Pratik</h4>
+                        <p>USN: 01FE23BCI114</p>
+                        <p>Roll no: 152</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="team-member-content">
+                        <h4>Sachidanand</h4>
+                        <p>USN: 01FE23BCI119</p>
+                        <p>Roll no: 156</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="team-member-content">
+                        <h4>Prachi</h4>
+                        <p>USN: 01FE23BCI</p>
+                        <p>Roll no: </p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <div class="team-member-content">
+                        <h4>Vaishnavi</h4>
+                        <p>USN: 01FE23BCI115</p>
+                        <p>Roll no:153 </p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
-</body>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.2
+            });
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
 </html>
