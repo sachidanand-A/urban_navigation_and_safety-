@@ -8,133 +8,174 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="stylereflect.css">
     <style>
-        /* General Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+    /* General Reset */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Arial', sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f9f9f9;
+        padding: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        opacity: 0;
+        animation: fadeIn 1s forwards; /* Fade-in effect for body */
+    }
+
+    /* Header Styling */
+    header {
+        background-color: #8A2BE2;
+        color: white;
+        padding: 2rem;
+        text-align: center;
+        border-radius: 10px;
+        margin-bottom: 2rem;
+        transform: translateY(-50px);
+        animation: slideIn 0.7s forwards 0.2s; /* Slide-in effect */
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    header p {
+        font-size: 1.2rem;
+        margin-top: 0.5rem;
+        font-style: italic;
+    }
+
+    /* Section Styling */
+    section {
+        background-color: white;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        transform: translateY(50px);
+        animation: fadeInUp 0.7s forwards;
+    }
+
+    section h2 {
+        color: #8A2BE2;
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+    }
+
+    section p {
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #555;
+    }
+
+    /* List Styling */
+    ul {
+        margin-top: 1rem;
+        padding-left: 1.5rem;
+        list-style-type: disc;
+    }
+
+    ul li {
+        font-size: 1rem;
+        color: #555;
+        margin-bottom: 0.5rem;
+        opacity: 0;
+        animation: fadeIn 1s forwards;
+        animation-delay: 0.2s;
+    }
+
+    /* Table Styling */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 1.5rem;
+    }
+
+    table th, table td {
+        padding: 0.75rem;
+        border: 1px solid #ddd;
+        text-align: left;
+        transition: background-color 0.3s ease; /* Transition for hover effect */
+    }
+
+    table th {
+        background-color: #8A2BE2;
+        color: white;
+    }
+
+    table th:hover {
+        background-color: #6A1EB2;
+    }
+
+    table td:hover {
+        background-color: #f1f1f1;
+    }
+
+    /* Button/Link Styling */
+    a {
+        display: inline-block;
+        text-decoration: none;
+        background-color: #8A2BE2;
+        color: white;
+        padding: 10px 15px;
+        border-radius: 5px;
+        font-size: 1rem;
+        margin-top: 1rem;
+        transition: background-color 0.3s, transform 0.3s; /* Added transition for scaling effect */
+    }
+
+    a:hover {
+        background-color: #6A1EB2;
+        transform: scale(1.05); /* Hover scale effect */
+    }
+
+    /* Animation for elements fading in */
+    @keyframes fadeIn {
+        to {
+            opacity: 1;
         }
-    
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f9;
-            padding: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
+    }
+
+    @keyframes fadeInUp {
+        to {
+            opacity: 1;
+            transform: translateY(0);
         }
-    
-        /* Header Styling */
-        header {
-            background-color: #8A2BE2;
-            color: white;
-            padding: 2rem;
-            text-align: center;
-            border-radius: 10px;
-            margin-bottom: 2rem;
+    }
+
+    @keyframes slideIn {
+        to {
+            transform: translateY(0);
         }
-    
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
         header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+            font-size: 2rem;
         }
-    
-        header p {
-            font-size: 1.2rem;
-            margin-top: 0.5rem;
-            font-style: italic;
-        }
-    
-        /* Section Styling */
-        section {
-            background-color: white;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-    
+
         section h2 {
-            color: #8A2BE2;
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
+            font-size: 1.5rem;
         }
-    
-        section p {
-            font-size: 1rem;
-            line-height: 1.5;
-            color: #555;
+
+        section p, ul li {
+            font-size: 0.9rem;
         }
-    
-        /* List Styling */
-        ul {
-            margin-top: 1rem;
-            padding-left: 1.5rem;
-            list-style-type: disc;
-        }
-    
-        ul li {
-            font-size: 1rem;
-            color: #555;
-            margin-bottom: 0.5rem;
-        }
-    
-        /* Table Styling */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 1.5rem;
-        }
-    
-        table th, table td {
-            padding: 0.75rem;
-            border: 1px solid #ddd;
-            text-align: left;
-        }
-    
-        table th {
-            background-color: #8A2BE2;
-            color: white;
-        }
-    
-        /* Button/Link Styling */
+
         a {
-            display: inline-block;
-            text-decoration: none;
-            background-color: #8A2BE2;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 5px;
-            font-size: 1rem;
-            margin-top: 1rem;
-            transition: background-color 0.3s;
+            padding: 8px 12px;
         }
-    
-        a:hover {
-            background-color: #6A1EB2;
-        }
-    
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2rem;
-            }
-    
-            section h2 {
-                font-size: 1.5rem;
-            }
-    
-            section p, ul li {
-                font-size: 0.9rem;
-            }
-    
-            a {
-                padding: 8px 12px;
-            }
-        }
-    </style>
+    }
+</style>
+
     
 </head>
 <body>
