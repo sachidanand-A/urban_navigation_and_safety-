@@ -1,4 +1,4 @@
-Course: Design and Analysis of Algorithms
+# Course: Design and Analysis of Algorithms
 Introduction:
 This course delves into the core principles of algorithm design and analysis, focusing on their real-world applications. The objective is to equip students with the ability to develop algorithms tailored for specific tasks, implement them using appropriate data structures, and enhance their performance. By bridging the gap between theoretical concepts and practical use cases, the course emphasizes the importance of algorithmic thinking in solving complex computational problems.
 
