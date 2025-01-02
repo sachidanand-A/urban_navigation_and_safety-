@@ -175,6 +175,26 @@
         }
     }
 </style>
+<script>
+        // Function to add transition effect to header and sections
+        window.onload = function() {
+            const header = document.querySelector('header');
+            const sections = document.querySelectorAll('section');
+            
+            // Fade-in header and sections
+            setTimeout(() => {
+                header.style.opacity = 1;
+                header.style.transform = 'translateY(0)';
+            }, 500); // Delay header transition
+
+            sections.forEach((section, index) => {
+                setTimeout(() => {
+                    section.style.opacity = 1;
+                    section.style.transform = 'translateY(0)';
+                }, 1000 * (index + 1)); // Delay section transitions
+            });
+        };
+    </script>
 
     
 </head>
