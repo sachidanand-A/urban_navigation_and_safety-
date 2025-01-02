@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shortest Path View</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f8fb;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #2a628f;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #f4419a;
+            font-size: 1.8em;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 10px;
+            margin-top: 20px;
+            text-transform: uppercase;
+        }
+
+        p {
+            line-height: 1.6;
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 15px;
+            transition: color 0.3s ease;
+        }
+
+        p:hover {
+            color: #222;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #2a628f;
+            color: white;
+            margin-top: 50px;
+            border-radius: 10px;
+            box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .use-case {
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .use-case:hover {
+            transform: translateY(-10px);
+            background-color: #f9f9f9;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        ul li {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        ul li:hover {
+            color: #f4419a;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Shortest Path View</h1>
+</header>
+
+<div class="container">
+    <div class="use-case">
+        <h2>Description</h2>
+        <p>The shortest path view provides users with the most direct route between two locations, minimizing distance or travel time. It’s especially useful for users seeking efficiency, such as commuters or those in time-sensitive situations. The route displayed is the optimal one in terms of the least distance or time, based on available road data.</p>
+    </div>
+
+    <div class="use-case">
+        <h2>Key Features</h2>
+        <p><strong>Optimal Route Calculation:</strong> Calculates the most direct path, either in terms of distance or time, from the user's current location to the destination.</p>
+        <p><strong>Minimal Resources:</strong> By focusing only on the shortest path, this feature helps save fuel, reduce travel time, and decrease emissions.</p>
+        <p><strong>Real-Time Adjustments:</strong> Continuously adjusts the route based on real-time data, such as road closures or traffic updates, to ensure users are always on the most efficient path.</p>
+    </div>
+
+    <div class="use-case">
+        <h2>Data Structures Used</h2>
+        <p><strong>Graph Representation:</strong> Similar to multiple route mapping, road networks are represented as graphs, where nodes are intersections and edges represent roads. The shortest path is computed based on edge weights (time or distance).</p>
+        <p><strong>Priority Queue (Min-Heap):</strong> This data structure is used to efficiently find the shortest path, helping algorithms like Dijkstra’s to perform optimally.</p>
+        <p><strong>Adjacency List:</strong> Stores the connections between nodes and their associated weights, providing a memory-efficient structure for the road network.</p>
+    </div>
+
+    <div class="use-case">
+        <h2>Algorithms Used</h2>
+        <ul>
+            <li><strong>Dijkstra’s Algorithm:</strong> A widely used algorithm for finding the shortest path in terms of distance or time. It calculates the shortest path from a source to all other nodes in a graph.</li>
+            <li><strong>A* Search Algorithm:</strong> This heuristic-driven algorithm speeds up the search for the shortest path, particularly in large road networks, by considering both distance and heuristic estimates.</li>
+        </ul>
+    </div>
+
+    <div class="use-case">
+        <h2>Benefits</h2>
+        <p>Helps users find the fastest or most direct route, saving time and reducing travel stress.</p>
+        <p>Reduces fuel consumption and emissions by selecting the shortest route, contributing to environmental sustainability.</p>
+        <p>Improves user satisfaction by ensuring the most efficient journey without unnecessary detours.</p>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 Shortest Path View. All Rights Reserved. | <a href="#">Contact Us</a></p>
+</footer>
+
+</body>
+</html>
