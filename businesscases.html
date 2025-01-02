@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Business Use Cases</title>
-    <style>
-        /* Rich Color Palette */
+  <style>
+        /* Base Styles */
         :root {
             --primary: #2d3436;
             --secondary: #0984e3;
@@ -94,85 +94,111 @@
             transform: translateY(-2px);
         }
 
-        /* Hero Section */
-        .hero {
-            padding: 8rem 0 4rem;
-            text-align: center;
+        .icon {
+            width: 20px;
+            height: 20px;
         }
 
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
+        /* Main Content */
+        main {
+            padding-top: 100px;
         }
 
-        .hero p {
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* Use Cases Grid */
-        .use-cases-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            padding: 2rem 0;
-        }
-
-        .case-card {
+        /* Use Case Styles */
+        .use-case {
             background: var(--card-bg);
             border-radius: 16px;
             padding: 2rem;
+            margin-bottom: 2rem;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            text-decoration: none;
-            color: var(--text-primary);
-        }
-
-        .case-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.2);
-        }
-
-        .case-card h2 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .case-card p {
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        .case-card ul {
-            list-style: none;
-            margin-top: 1rem;
-        }
-
-        .case-card li {
-            margin-bottom: 0.5rem;
-            padding-left: 1.5rem;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
             position: relative;
         }
 
-        .case-card li::before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: var(--accent);
+         main {
+            padding-top: 120px; /* Increased padding to account for fixed header */
         }
 
-        /* Animations */
+        /* Update use-case styles */
+        .use-case {
+            margin-top: 20px;
+        }
+        .use-case-content {
+            flex: 1;
+            margin-bottom: 2rem;
+        }
+
+        .btn-wrapper {
+            text-align: center;
+            margin-top: auto;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+            color: var(--text-primary);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--gradient-end), var(--gradient-start));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(108, 92, 231, 0.4);
+        }
+
+        .btn:hover:before {
+            opacity: 1;
+        }
+
+        .btn span {
+            position: relative;
+            z-index: 1;
+        }
+
+        .use-case h2 {
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .use-case .sdg {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .use-case strong {
+            color: var(--accent);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease forwards;
+        }
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -184,11 +210,6 @@
             }
         }
 
-        .fade-in {
-            animation: fadeIn 1s ease-out forwards;
-        }
-
-        /* Responsive Design */
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
@@ -199,15 +220,11 @@
                 flex-wrap: wrap;
                 justify-content: center;
             }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
         }
     </style>
 </head>
 <body>
-    <header class="main-header">
+  <header class="main-header">
         <div class="container">
             <div class="header-content">
                 <h1 class="logo">TEAM 4</h1>
@@ -218,13 +235,13 @@
                         </svg>
                         Github
                     </a>
-                    <a href="index.html" class="nav-link">
+                    <a href="projrct_intro.html" class="nav-link">
                         <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
                         </svg>
                         Overview
                     </a>
-                    <a href="#" class="nav-link">
+                    <a href="businesscases.html" class="nav-link">
                         <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
                             <polyline points="7.5 4.21 12 6.81 16.5 4.21"></polyline>
