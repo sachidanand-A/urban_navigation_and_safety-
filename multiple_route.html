@@ -94,20 +94,18 @@
             background-color: #f9f9f9;
         }
 
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #f4419a;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
+        ul {
+            padding-left: 20px;
         }
 
-        .btn:hover {
-            background-color: #d63384;
+        ul li {
+            font-size: 1.1em;
+            margin-bottom: 10px;
         }
 
+        ul li:hover {
+            color: #f4419a;
+        }
     </style>
 </head>
 <body>
@@ -137,10 +135,12 @@
     </div>
 
     <div class="use-case">
-        <h2>Algorithms</h2>
-        <p><strong>Dijkstra’s Algorithm:</strong> Used to calculate the shortest route in terms of distance or time for single-source shortest path problems.</p>
-        <p><strong>A* Search Algorithm:</strong> Enhances Dijkstra’s with heuristics for faster computation, especially for large-scale maps.</p>
-        <p><strong>K-Shortest Paths Algorithm:</strong> Finds multiple optimal routes by iteratively calculating paths beyond the shortest one.</p>
+        <h2>Algorithms Used</h2>
+        <ul>
+            <li><strong>Dijkstra’s Algorithm:</strong> Used to calculate the shortest route in terms of distance or time for single-source shortest path problems.</li>
+            <li><strong>A* Search Algorithm:</strong> Enhances Dijkstra’s with heuristics for faster computation, especially for large-scale maps.</li>
+            <li><strong>K-Shortest Paths Algorithm:</strong> Finds multiple optimal routes by iteratively calculating paths beyond the shortest one.</li>
+        </ul>
     </div>
 
     <div class="use-case">
@@ -148,11 +148,6 @@
         <p>Empowers users to make informed travel choices.</p>
         <p>Reduces travel stress by offering alternative paths during congestion or roadblocks.</p>
         <p>Enhances flexibility, especially for users with specific travel needs.</p>
-    </div>
-
-    <div class="use-case">
-        <h2>Learn More</h2>
-        <a href="#" class="btn">Explore Algorithms</a>
     </div>
 </div>
 
