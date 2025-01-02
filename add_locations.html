@@ -1,1 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adding New Locations</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f8fb;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #2a628f;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #f4419a;
+            font-size: 1.8em;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 10px;
+            margin-top: 20px;
+            text-transform: uppercase;
+        }
+
+        p {
+            line-height: 1.6;
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 15px;
+            transition: color 0.3s ease;
+        }
+
+        p:hover {
+            color: #222;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #2a628f;
+            color: white;
+            margin-top: 50px;
+            border-radius: 10px;
+            box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .use-case {
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .use-case:hover {
+            transform: translateY(-10px);
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Adding New Locations</h1>
+</header>
+
+<div class="container">
+    <div class="use-case">
+        <h2>Description</h2>
+        <p>This use case focuses on allowing users to add new locations to the system. Whether for navigation, place bookmarking, or future route planning, users can introduce custom destinations to improve their travel experience and expand the system’s location database.</p>
+    </div>
+
+    <div class="use-case">
+        <h2>Key Features</h2>
+        <p><strong>Location Input:</strong> Users can input the name and coordinates (latitude/longitude) of new locations directly.</p>
+        <p><strong>Location Validation:</strong> The system validates new locations to ensure they are accurate and unique.</p>
+        <p><strong>Category Assignment:</strong> Locations can be categorized (e.g., restaurant, landmark, business) for better organization.</p>
+    </div>
+
+    <div class="use-case">
+        <h2>Data Structures Used</h2>
+        <p><strong>Graph Representation:</strong> Locations are stored as nodes within a graph, allowing easy traversal and pathfinding.</p>
+        <p><strong>Database:</strong> Locations are stored in a centralized database with details like name, coordinates, and category.</p>
+        <p><strong>Indexing:</strong> Locations are indexed by their names and categories for efficient searching.</p>
+    </div>
+
+    <div class="use-case">
+        <h2>Algorithms Used</h2>
+        <p><strong>Geospatial Algorithms:</strong> Used for validating the geographical accuracy of locations.</p>
+        <p><strong>Search Algorithms:</strong> Implements efficient algorithms to search for newly added locations by category or proximity.</p>
+        <p><strong>Routing Algorithms:</strong> Recalculates routes incorporating new locations, optimizing travel paths.</p>
+    </div>
+
+    <div class="use-case">
+        <h2>Benefits</h2>
+        <p>Enables users to personalize their travel experience by adding locations of interest.</p>
+        <p>Improves the system’s versatility by expanding its location database.</p>
+        <p>Enhances route optimization and planning by incorporating user-added destinations.</p>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 Adding New Locations. All Rights Reserved. | <a href="#">Contact Us</a></p>
+</footer>
+
+</body>
+</html>
 
