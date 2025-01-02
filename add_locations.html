@@ -109,25 +109,17 @@
 
     <div class="use-case">
         <h2>Key Features</h2>
-        <p><strong>Location Input:</strong> Users can input the name and coordinates (latitude/longitude) of new locations directly.</p>
+        <p><strong>Location Input:</strong> Users can input the name and edgges of the node [distances].</p>
         <p><strong>Location Validation:</strong> The system validates new locations to ensure they are accurate and unique.</p>
-        <p><strong>Category Assignment:</strong> Locations can be categorized (e.g., restaurant, landmark, business) for better organization.</p>
-    </div>
+   </div>
 
     <div class="use-case">
         <h2>Data Structures Used</h2>
-        <p><strong>Graph Representation:</strong> Locations are stored as nodes within a graph, allowing easy traversal and pathfinding.</p>
-        <p><strong>Database:</strong> Locations are stored in a centralized database with details like name, coordinates, and category.</p>
+        <p><strong>Adjacency Matrix:</strong> Locations are stored as nodes within a graph, allowing easy traversal and pathfinding.</p>
+        <p><strong>fstream[file Handling]:</strong> Locations are stored in a local file with details like name, distances.</p>
         <p><strong>Indexing:</strong> Locations are indexed by their names and categories for efficient searching.</p>
     </div>
-
-    <div class="use-case">
-        <h2>Algorithms Used</h2>
-        <p><strong>Geospatial Algorithms:</strong> Used for validating the geographical accuracy of locations.</p>
-        <p><strong>Search Algorithms:</strong> Implements efficient algorithms to search for newly added locations by category or proximity.</p>
-        <p><strong>Routing Algorithms:</strong> Recalculates routes incorporating new locations, optimizing travel paths.</p>
-    </div>
-
+    
     <div class="use-case">
         <h2>Benefits</h2>
         <p>Enables users to personalize their travel experience by adding locations of interest.</p>
