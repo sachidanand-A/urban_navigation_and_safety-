@@ -5,117 +5,325 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Business Use Cases</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        /* Rich Color Palette */
+        :root {
+            --primary: #2d3436;
+            --secondary: #0984e3;
+            --accent: #00cec9;
+            --background: #1a1a2e;
+            --card-bg: #1e272e;
+            --text-primary: #dfe6e9;
+            --text-secondary: #b2bec3;
+            --gradient-start: #6c5ce7;
+            --gradient-end: #00cec9;
+        }
+
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            background: #121212;
-            color: #ffffff;
         }
 
-        header {
-            background: linear-gradient(90deg, #0078d7, #1e90ff);
-            padding: 20px;
-            text-align: center;
-        }
-
-        header h1 {
+        body {
             margin: 0;
-            font-size: 2rem;
+            font-family: 'Inter', system-ui, sans-serif;
+            color: var(--text-primary);
+            background-color: var(--background);
+            line-height: 1.6;
         }
 
-        main {
+        /* Header Styles */
+        .main-header {
+            background: rgba(30, 39, 46, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .header-content {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            padding: 20px;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
         }
 
-        main div {
-            background: #1f1f1f;
-            border-radius: 8px;
-            padding: 20px;
-            width: 250px;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s, box-shadow 0.3s;
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: transform 0.3s ease;
         }
 
-        main div:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.5);
+        .logo:hover {
+            transform: scale(1.05);
         }
 
-        main div a {
+        /* Navigation */
+        .main-nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
             text-decoration: none;
-            color: inherit;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
         }
 
-        main h2 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
+        .nav-link:hover {
+            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
         }
 
-        main p {
-            font-size: 1rem;
-            line-height: 1.5;
-        }
-
-        footer {
-            background: #0078d7;
+        /* Hero Section */
+        .hero {
+            padding: 8rem 0 4rem;
             text-align: center;
-            padding: 10px 0;
-            color: white;
-            margin-top: 20px;
         }
 
-        footer p {
-            margin: 0;
-            font-size: 0.9rem;
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Use Cases Grid */
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .case-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+
+        .case-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.2);
+        }
+
+        .case-card h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .case-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .case-card ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .case-card li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .case-card li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .main-nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1><strong>Business Cases</strong> Identified by Each Team Member</h1>
+    <header class="main-header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">TEAM 4</h1>
+                <nav class="main-nav">
+                    <a href="https://github.com/sachidanand-A/urban_navigation_and_safety-/blob/main" class="nav-link">
+                        <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                        </svg>
+                        Github
+                    </a>
+                    <a href="index.html" class="nav-link">
+                        <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                        </svg>
+                        Overview
+                    </a>
+                    <a href="usecases.html" class="nav-link">
+                        <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            <polyline points="7.5 4.21 12 6.81 16.5 4.21"></polyline>
+                            <polyline points="7.5 19.79 7.5 14.6 3 12"></polyline>
+                            <polyline points="21 12 16.5 14.6 16.5 19.79"></polyline>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                        Use Cases
+                    </a>
+                    <a href="reflections_team.html" class="nav-link">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M15 14c.2-1 .7-1.7 1.5-2.5M9 14c-.2-1-.7-1.7-1.5-2.5M6 9h.01M18 9h.01"></path>
+                            <path d="M12 2a8 8 0 0 0-8 8v1a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4v-1a8 8 0 0 0-8-8z"></path>
+                            <path d="M9.1 16.3a2.8 2.8 0 0 0 5.8 0"></path>
+                        </svg>
+                        Reflections
+                    </a>
+                </nav>
+            </div>
+        </div>
     </header>
-    <main>
-        <div>
-            <a href="pratik_usecases.html">
+
+    <main class="container">
+        <section class="hero fade-in">
+            <h1>Business Use Cases</h1>
+            <p>Explore the innovative solutions and use cases identified by each team member for urban navigation and safety.</p>
+        </section>
+
+        <div class="use-cases-grid">
+            <a href="pratik_usecases.html" class="case-card fade-in">
                 <h2>Pratik</h2>
-                <p>
-                    1. Travel History and Analysis <br>
-                    2. Shortest path viewing 
-                </p>
+                <ul>
+                    <li>Travel History and Analysis</li>
+                    <li>Shortest Path Viewing</li>
+                </ul>
             </a>
-        </div>
-        <div>
-            <a href="sach_usecases.html">
+
+            <a href="sach_usecases.html" class="case-card fade-in">
                 <h2>Sachidanand</h2>
-                <p>
-                    1. Multiple Route Viewing  <br>
-                    2. Adding New Locations 
-                </p>
+                <ul>
+                    <li>Multiple Route Viewing</li>
+                    <li>Adding New Locations</li>
+                </ul>
             </a>
-        </div>
-        <div>
-            <a href="mallikarjun/business_model.html">
+
+            <a href="mallikarjun/business_model.html" class="case-card fade-in">
                 <h2>Prachi</h2>
-                <p>
-                    1. Personal Safety Features<br>
-                </p>
+                <ul>
+                    <li>Personal Safety Features</li>
+                </ul>
             </a>
-        </div>
-        <div>
-            <a href="subbramnnya/subb_businesscases.html">
+
+            <a href="subbramnnya/subb_businesscases.html" class="case-card fade-in">
                 <h2>Vaishnavi</h2>
-                <p>
-                    1. Estimated Travel Time Calculation<br>
-                </p>
+                <ul>
+                    <li>Estimated Travel Time Calculation</li>
+                </ul>
             </a>
         </div>
     </main>
-    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Intersection Observer for fade-in animations
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            document.querySelectorAll('.case-card, .hero').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Header scroll functionality
+            let lastScroll = 0;
+            const header = document.querySelector('.main-header');
+
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset;
+
+                if (currentScroll <= 0) {
+                    header.style.transform = 'translateY(0)';
+                    header.style.background = 'rgba(30, 39, 46, 0.95)';
+                } else if (currentScroll > lastScroll) {
+                    header.style.transform = 'translateY(-100%)';
+                } else {
+                    header.style.transform = 'translateY(0)';
+                    header.style.background = 'rgba(30, 39, 46, 0.98)';
+                }
+                lastScroll = currentScroll;
+            });
+        });
+    </script>
 </body>
 </html>
