@@ -7,15 +7,13 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f9f9f9;
+            background-color: #edf2f7;
             margin: 0;
-            padding: 0;
+            padding: 20px;
             line-height: 1.8;
             color: #333;
-            padding-left: 50px; /* Added space to the left */
-            padding-right: 50px; /* Added space to the right */
         }
-        
+
         header {
             background-color: #2a628f;
             color: white;
@@ -23,111 +21,139 @@
             text-align: center;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 30px auto;
             padding: 30px;
-            background-color: white;
+            background-color: #ffffff;
             box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        
+
         .container:hover {
             transform: scale(1.02);
             box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
         }
-        
+
         h1 {
             color: #f4419a;
             text-align: center;
             font-size: 2.5em;
             letter-spacing: 1.2px;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
         }
-        
+
         h2 {
-            color: #f4419a;
+            color: #2a628f;
             font-size: 1.8em;
             margin-top: 20px;
+            margin-bottom: 10px;
             border-bottom: 2px solid #eaeaea;
             padding-bottom: 10px;
             text-transform: uppercase;
         }
-        
+
         p {
             color: #21262a;
             font-size: 1.1em;
             margin-bottom: 15px;
             line-height: 1.6;
-            transition: color 0.4s ease;
         }
-        
-        p:hover {
-            color: #131314;
+
+        .objective, .description, .benefits {
+            margin-top: 10px;
+            margin-left: 15px;
+            font-style: italic;
+            color: #555;
         }
-        
+
         .use-case {
             margin-bottom: 30px;
         }
-        
+
         footer {
             text-align: center;
             padding: 15px;
-            background-color: #f4419a;
+            background-color: #2a628f;
             color: white;
-            position: relative;
             margin-top: 50px;
             border-radius: 10px;
             box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
         }
-        
+
         footer a {
             color: #fff;
             text-decoration: none;
             font-weight: bold;
         }
-        
+
         footer a:hover {
             text-decoration: underline;
         }
+
         .sdg {
             color: #5341f4;
-            font-size: 18px;
+            font-size: 1.2em;
+            font-weight: bold;
         }
-        
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 10px;
+            color: white;
+            background-color: #f4419a;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #c63079;
+        }
     </style>
 </head>
 <body>
+    <header>
+        <h1>Use Cases</h1>
+    </header>
 
-<div class="container">
-    <div class="use-case">
-         <p>click on business case to know about them</p>
-        <a href="route_businessm.html">
-        <h2>Travel history and analysis</h2>
-        <p><strong class ="sdg" >The travel history is stored in an external file and that data  can be accessed by user or programmer at any time
-        Objective: Track and analyze users' travel history.
-        Description: The app maintains a log of users' travel history, enabling them to review past routes for safety and efficiency. Users can analyze this data to identify travel patterns and make informed decisions about their future travel habits.
-        Benefits: Helps users optimize their travel routines, ensuring safer and more efficient journeys.
+    <div class="container">
+        <div class="use-case">
+            <h2>Travel History and Analysis</h2>
+            <p class="sdg">The travel history is stored in an external file, and the data can be accessed by the user or programmer at any time.</p>
+            <div class="objective">
+                <strong>Objective:</strong> Track and analyze users' travel history.
+            </div>
+            <div class="description">
+                <strong>Description:</strong> The app maintains a log of users' travel history, enabling them to review past routes for safety and efficiency. Users can analyze this data to identify travel patterns and make informed decisions about their future travel habits.
+            </div>
+            <div class="benefits">
+                <strong>Benefits:</strong> Helps users optimize their travel routines, ensuring safer and more efficient journeys.
+            </div>
+        </div>
 
-        </p>
-
-    
-</div>
-
-    <div class="use-case">
-        <a href="traffic_businesscase.html">
-        <h2>Adding new locations</h2>
-        <p><strong class ="sdg">It gives an opportunity to user or programmer to add new locations with thier distances between their adjacent destinations.
-</p>
-        <p>Objective: Update the city map with new developments.
-         Description: Users or city officials can add new locations to the city map, such as newly constructed buildings, roads, or public amenities.
-         Benefits: Keeps the navigation system up-to-date, ensuring accuracy and reliability for users.
-</p> 
-        
+        <div class="use-case">
+            <h2>Adding New Locations</h2>
+            <p class="sdg">It gives an opportunity to users or programmers to add new locations with their distances between adjacent destinations.</p>
+            <div class="objective">
+                <strong>Objective:</strong> Update the city map with new developments.
+            </div>
+            <div class="description">
+                <strong>Description:</strong> Users or city officials can add new locations to the city map, such as newly constructed buildings, roads, or public amenities.
+            </div>
+            <div class="benefits">
+                <strong>Benefits:</strong> Keeps the navigation system up-to-date, ensuring accuracy and reliability for users.
+            </div>
+        </div>
     </div>
 
+    <footer>
+        <p>&copy; 2025 Use Cases. All Rights Reserved. <a href="#top">Back to Top</a></p>
+    </footer>
 </body>
 </html>
