@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team Overview - Urban Navigation and Safety</title>
     <style>
+        /* Base Styles */
         :root {
             --primary: #2d3436;
             --secondary: #0984e3;
@@ -24,10 +25,17 @@
         }
 
         body {
+            margin: 0;
             font-family: 'Inter', system-ui, sans-serif;
             color: var(--text-primary);
             background-color: var(--background);
             line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
 
         /* Header Styles */
@@ -39,12 +47,7 @@
             top: 0;
             z-index: 100;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
+            transition: all 0.3s ease;
         }
 
         .header-content {
@@ -64,6 +67,11 @@
             transition: transform 0.3s ease;
         }
 
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        /* Navigation */
         .main-nav {
             display: flex;
             gap: 2rem;
@@ -86,11 +94,16 @@
             transform: translateY(-2px);
         }
 
+        .icon {
+            width: 20px;
+            height: 20px;
+        }
+
         /* Hero Section */
         .hero {
             padding: 8rem 0 4rem;
             text-align: center;
-            background: linear-gradient(135deg, rgba(108, 92, 231, 0.1), rgba(0, 206, 201, 0.1));
+            background: linear-gradient(rgba(26, 26, 46, 0.8), rgba(26, 26, 46, 0.9));
         }
 
         .hero h1 {
@@ -105,27 +118,35 @@
         .hero p {
             font-size: 1.2rem;
             color: var(--text-secondary);
-            max-width: 800px;
+            max-width: 600px;
             margin: 0 auto;
         }
 
-        /* Overview Section */
+        /* Overview Sections */
         .overview-section {
             padding: 4rem 0;
-            background: var(--card-bg);
-            margin: 2rem 0;
-            border-radius: 16px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gradient-text {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .features-list {
             list-style: none;
-            padding: 2rem;
+            padding-left: 1.5rem;
+            margin: 1.5rem 0;
         }
 
         .features-list li {
+            position: relative;
             margin-bottom: 1rem;
             padding-left: 1.5rem;
-            position: relative;
         }
 
         .features-list li::before {
@@ -140,61 +161,59 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
-            padding: 2rem 0;
+            margin-top: 2rem;
         }
 
         .team-member {
             background: var(--card-bg);
             border-radius: 16px;
-            overflow: hidden;
-            transition: all 0.3s ease;
+            padding: 1.5rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .team-member:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .team-member-link {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .team-member-content {
-            padding: 2rem;
-            background: linear-gradient(135deg, rgba(108, 92, 231, 0.1), rgba(0, 206, 201, 0.1));
+            transform: translateY(-8px);
+            box-shadow: 0 12px 48px rgba(0, 0, 0, 0.2);
         }
 
         .team-member h4 {
+            color: var(--accent);
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
 
         .team-member p {
             color: var(--text-secondary);
-            margin: 0.5rem 0;
+            margin-bottom: 0.5rem;
         }
 
         /* Animations */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .fade-in {
-            animation: fadeIn 1s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
 
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
             .header-content {
                 flex-direction: column;
                 gap: 1rem;
@@ -204,8 +223,18 @@
                 flex-wrap: wrap;
                 justify-content: center;
             }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .gradient-text {
+                font-size: 2rem;
+            }
         }
     </style>
+</head>
+<body>
     <header class="main-header">
         <div class="container">
             <div class="header-content">
@@ -246,9 +275,6 @@
             </div>
         </div>
     </header>
-<body>
-   <!-- Update the navigation section -->
-
 
     <section class="hero">
         <div class="container">
@@ -259,59 +285,47 @@
 
     <main class="container">
         <section class="overview-section fade-in">
-            <div class="container">
-                <h2 class="gradient-text">Project Overview</h2>
-                <p>
-                    Our project involves designing and developing sustainable Urban Navigation and Safety systems covering 1500 square kilometers smart city. The objective is to create a technologically advanced, sustainable, and citizen-centric urban environment navigation and safety systems that enhances quality of life, fosters economic growth, and serves as a model for sustainable urban development.
-                </p>
-                <h3>Key Features:</h3>
-                <ul class="features-list">
-                    <li>Leverage advanced algorithms for efficient Navigation and Safety</li>
-                    <li>Use data-driven insights for optimizing traffic and public weather</li>
-                    <li>Integrate modern technologies to ensure sustainability and citizen engagement</li>
-                </ul>
-            </div>
+            <h2 class="gradient-text">Project Overview</h2>
+            <p>
+                Our project involves designing and developing sustainable Urban Navigation and Safety systems covering 1500 square kilometers smart city. The objective is to create a technologically advanced, sustainable, and citizen-centric urban environment navigation and safety systems that enhances quality of life, fosters economic growth, and serves as a model for sustainable urban development.
+            </p>
+            <h3>Key Features:</h3>
+            <ul class="features-list">
+                <li>Leverage advanced algorithms for efficient Navigation and Safety</li>
+                <li>Use data-driven insights for optimizing traffic and public weather</li>
+                <li>Integrate modern technologies to ensure sustainability and citizen engagement</li>
+            </ul>
         </section>
 
         <section class="overview-section fade-in">
-            <div class="container">
-                <h2 class="gradient-text">Problem Space</h2>
-                <p>
-                    Urban navigation and safety face challenges like dynamic traffic, GPS inaccuracies, and infrastructure limitations, complicating efficient and safe travel. Pedestrian and cyclist interactions, multimodal transport, and unpredictable road user behaviors add complexity. Environmental hazards, crime risks, and accident prevention require robust systems. Data accuracy, IoT integration, and computational constraints limit technological solutions. Legal, equity, and urban planning gaps further hinder progress. Emerging solutions include AI for traffic prediction, connected vehicles, advanced sensors, and crowdsourced data for real-time insights.
-                </p>
-            </div>
+            <h2 class="gradient-text">Problem Space</h2>
+            <p>
+                Urban navigation and safety face challenges like dynamic traffic, GPS inaccuracies, and infrastructure limitations, complicating efficient and safe travel. Pedestrian and cyclist interactions, multimodal transport, and unpredictable road user behaviors add complexity. Environmental hazards, crime risks, and accident prevention require robust systems. Data accuracy, IoT integration, and computational constraints limit technological solutions. Legal, equity, and urban planning gaps further hinder progress. Emerging solutions include AI for traffic prediction, connected vehicles, advanced sensors, and crowdsourced data for real-time insights.
+            </p>
         </section>
 
         <section class="fade-in">
             <h2 class="gradient-text">Team Members</h2>
             <div class="team-grid">
                 <div class="team-member">
-                    <div class="team-member-content">
-                        <h4>Pratik</h4>
-                        <p>USN: 01FE23BCI114</p>
-                        <p>Roll no: 152</p>
-                    </div>
+                    <h4>Pratik</h4>
+                    <p>USN: 01FE23BCI114</p>
+                    <p>Roll no: 152</p>
                 </div>
                 <div class="team-member">
-                    <div class="team-member-content">
-                        <h4>Sachidanand</h4>
-                        <p>USN: 01FE23BCI119</p>
-                        <p>Roll no: 156</p>
-                    </div>
+                    <h4>Sachidanand</h4>
+                    <p>USN: 01FE23BCI119</p>
+                    <p>Roll no: 156</p>
                 </div>
                 <div class="team-member">
-                    <div class="team-member-content">
-                        <h4>Prachi</h4>
-                        <p>USN: 01FE23BCI015</p>
-                        <p>Roll no:106 </p>
-                    </div>
+                    <h4>Prachi</h4>
+                    <p>USN: 01FE23BCI015</p>
+                    <p>Roll no: 106</p>
                 </div>
                 <div class="team-member">
-                    <div class="team-member-content">
-                        <h4>Vaishnavi</h4>
-                        <p>USN: 01FE23BCI115</p>
-                        <p>Roll no:153 </p>
-                    </div>
+                    <h4>Vaishnavi</h4>
+                    <p>USN: 01FE23BCI115</p>
+                    <p>Roll no: 153</p>
                 </div>
             </div>
         </section>
@@ -319,6 +333,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // Intersection Observer for fade-in animations
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -332,6 +347,25 @@
 
             document.querySelectorAll('.fade-in').forEach(el => {
                 observer.observe(el);
+            });
+
+            // Header scroll functionality
+            let lastScroll = 0;
+            const header = document.querySelector('.main-header');
+
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset;
+
+                if (currentScroll <= 0) {
+                    header.style.transform = 'translateY(0)';
+                    header.style.background = 'rgba(30, 39, 46, 0.95)';
+                } else if (currentScroll > lastScroll) {
+                    header.style.transform = 'translateY(-100%)';
+                } else {
+                    header.style.transform = 'translateY(0)';
+                    header.style.background = 'rgba(30, 39, 46, 0.98)';
+                }
+                lastScroll = currentScroll;
             });
         });
     </script>
