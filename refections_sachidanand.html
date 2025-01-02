@@ -5,7 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Algorithm Design and Analysis</title>
     <style>
-        /* Previous styles remain unchanged */
+        /* Theme Variables */
+        :root {
+            --primary: #2d3436;
+            --secondary: #0984e3;
+            --accent: #00cec9;
+            --background: #1a1a2e;
+            --card-bg: #1e272e;
+            --text-primary: #dfe6e9;
+            --text-secondary: #b2bec3;
+            --gradient-start: #6c5ce7;
+            --gradient-end: #00cec9;
+        }
+
+        /* Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', system-ui, sans-serif;
+            color: var(--text-primary);
+            background-color: var(--background);
+            line-height: 1.6;
+            padding: 2rem;
+        }
+
+        /* Header Styles */
         .main-header {
             background: rgba(30, 39, 46, 0.95);
             backdrop-filter: blur(10px);
@@ -26,6 +55,21 @@
             align-items: center;
         }
 
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        /* Navigation */
         .main-nav {
             display: flex;
             gap: 2rem;
@@ -48,45 +92,52 @@
             transform: translateY(-2px);
         }
 
-        .nav-link[aria-current='page'] {
-            color: var(--accent);
-            background: rgba(255, 255, 255, 0.1);
+        .icon {
+            width: 20px;
+            height: 20px;
         }
 
-        /* Rest of the styles remain unchanged */
+        /* Rest of your existing styles... */
     </style>
 </head>
 <body>
-    <header class="main-header">
+    <header class="main-header slide-in">
         <div class="container">
             <div class="header-content">
-                <h1 class="logo">Algorithm Design</h1>
+                <h1 class="logo">Reflection</h1>
                 <nav class="main-nav">
-                    <a href="/" class="nav-link">
+                    <a href="index.html" class="nav-link">
                         <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                             <polyline points="9 22 9 12 15 12 15 22"></polyline>
                         </svg>
                         Home
                     </a>
-                    <a href="/page2.html" class="nav-link">
+                    <a href="#" class="nav-link">
                         <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path>
-                            <polyline points="13 2 13 9 20 9"></polyline>
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
                         </svg>
-                        Other Page
+                        Github
                     </a>
-                    <a href="/sa.html" class="nav-link" aria-current="page">
+                    <a href="#" class="nav-link">
                         <svg class="icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
                         </svg>
-                        Algorithms
+                        Overview
+                    </a>
+                    <a href="reflection.html" class="nav-link">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M15 14c.2-1 .7-1.7 1.5-2.5M9 14c-.2-1-.7-1.7-1.5-2.5M6 9h.01M18 9h.01"></path>
+                            <path d="M12 2a8 8 0 0 0-8 8v1a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4v-1a8 8 0 0 0-8-8z"></path>
+                            <path d="M9.1 16.3a2.8 2.8 0 0 0 5.8 0"></path>
+                        </svg>
+                        Reflections
                     </a>
                 </nav>
             </div>
         </div>
     </header>
 
-    <!-- Rest of the content remains unchanged -->
+    <!-- Rest of your content remains unchanged -->
 </body>
 </html>
