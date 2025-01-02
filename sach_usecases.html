@@ -18,42 +18,41 @@
         header {
             background-color: #2a628f;
             color: white;
-            padding: 15px 0;
+            padding: 20px 0;
             text-align: center;
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.8em;
+            letter-spacing: 1.2px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
         }
 
         .container {
             max-width: 1200px;
-            margin: 30px auto;
+            margin: 40px auto;
             padding: 30px;
             background-color: #ffffff;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         .container:hover {
             transform: scale(1.02);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-        }
-
-        h1 {
-            color: #f4419a;
-            text-align: center;
-            font-size: 2.5em;
-            letter-spacing: 1.2px;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
         }
 
         h2 {
             color: #2a628f;
-            font-size: 1.8em;
+            font-size: 2em;
             margin-top: 20px;
-            margin-bottom: 10px;
-            border-bottom: 2px solid #eaeaea;
-            padding-bottom: 10px;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #eaeaea;
+            padding-bottom: 8px;
             text-transform: uppercase;
         }
 
@@ -62,10 +61,23 @@
             font-size: 1.1em;
             margin-bottom: 15px;
             line-height: 1.6;
+            transition: color 0.3s ease;
+        }
+
+        p:hover {
+            color: #333;
         }
 
         .use-case {
-            margin-bottom: 30px;
+            margin-bottom: 40px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            transition: background-color 0.3s ease;
+        }
+
+        .use-case:hover {
+            background-color: #f1f1f1;
         }
 
         footer {
@@ -75,7 +87,7 @@
             color: white;
             margin-top: 50px;
             border-radius: 10px;
-            box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
         }
 
         footer a {
@@ -96,69 +108,76 @@
 
         .objective, .description, .benefits {
             margin-top: 10px;
-            margin-left: 15px;
+            margin-left: 20px;
             font-style: italic;
             color: #555;
         }
 
         .btn {
             display: inline-block;
-            padding: 10px 20px;
+            padding: 12px 25px;
             margin-top: 10px;
             color: white;
             background-color: #f4419a;
             border: none;
             border-radius: 5px;
             text-decoration: none;
-            font-size: 1em;
-            transition: background-color 0.3s ease;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         .btn:hover {
             background-color: #c63079;
+            transform: translateY(-2px);
+        }
+
+        .btn:focus {
+            outline: none;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Use Cases</h1>
-    </header>
 
-    <div class="container">
-        <div class="use-case">
-            <p>Click on the business case to know more about it:</p>
-            <a href="multiple_route.html" class="btn">Explore Use Case</a>
-            <h2>Multiple Route Mapping</h2>
-            <p><span class="sdg">When asked for navigation, multiple routes are shown to the user, including their distances.</span></p>
-            <div class="objective">
-                <strong>Objective:</strong> Provide users with multiple route options.
-            </div>
-            <div class="description">
-                <strong>Description:</strong> Users can view several possible routes between two locations, allowing them to choose the one that best suits their needs based on factors like travel time, distance, and current traffic conditions.
-            </div>
-            <div class="benefits">
-                <strong>Benefits:</strong> Empowers users with choices, enabling them to select the most convenient and efficient route.
-            </div>
+<header>
+    <h1>Use Cases</h1>
+</header>
+
+<div class="container">
+    <div class="use-case">
+        <p>Click on the business case to know more about it:</p>
+        <a href="multiple_route.html" class="btn">Explore Use Case</a>
+        <h2>Multiple Route Mapping</h2>
+        <p><span class="sdg">When asked for navigation, multiple routes are shown to the user, including their distances.</span></p>
+        <div class="objective">
+            <strong>Objective:</strong> Provide users with multiple route options.
+        </div>
+        <div class="description">
+            <strong>Description:</strong> Users can view several possible routes between two locations, allowing them to choose the one that best suits their needs based on factors like travel time, distance, and current traffic conditions.
+        </div>
+        <div class="benefits">
+            <strong>Benefits:</strong> Empowers users with choices, enabling them to select the most convenient and efficient route.
         </div>
     </div>
-<div class="use-case">
-   
-    <a href="shortest_path.html" class="btn">Explore Use Case</a>
-    <h2>Shortest Path View</h2>
-    <p><span class="sdg">When asked for navigation, the shortest path is displayed to the user.</span></p>
-    <div class="objective">
-        <strong>Objective:</strong> Provide users with the shortest route option.
-    </div>
-    <div class="description">
-        <strong>Description:</strong> Users can view the shortest possible route between two locations, prioritizing the least distance. This option helps users save time and resources, particularly for situations requiring the most direct path.
-    </div>
-    <div class="benefits">
-        <strong>Benefits:</strong> Saves time, reduces travel distance, and is ideal for users seeking the most direct route.
+
+    <div class="use-case">
+        <a href="shortest_path.html" class="btn">Explore Use Case</a>
+        <h2>Shortest Path View</h2>
+        <p><span class="sdg">When asked for navigation, the shortest path is displayed to the user.</span></p>
+        <div class="objective">
+            <strong>Objective:</strong> Provide users with the shortest route option.
+        </div>
+        <div class="description">
+            <strong>Description:</strong> Users can view the shortest possible route between two locations, prioritizing the least distance. This option helps users save time and resources, particularly for situations requiring the most direct path.
+        </div>
+        <div class="benefits">
+            <strong>Benefits:</strong> Saves time, reduces travel distance, and is ideal for users seeking the most direct route.
+        </div>
     </div>
 </div>
 
-    <footer>
-        <p>&copy; 2025 Use Cases. All Rights Reserved. <a href="#top">Back to Top</a></p>
-    </footer>
+<footer>
+    <p>&copy; 2025 Use Cases. All Rights Reserved. <a href="#top">Back to Top</a></p>
+</footer>
+
 </body>
 </html>
