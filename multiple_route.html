@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Route Mapping</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f8fb;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #2a628f;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #f4419a;
+            font-size: 1.8em;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 10px;
+            margin-top: 20px;
+            text-transform: uppercase;
+        }
+
+        p {
+            line-height: 1.6;
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 15px;
+            transition: color 0.3s ease;
+        }
+
+        p:hover {
+            color: #222;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #2a628f;
+            color: white;
+            margin-top: 50px;
+            border-radius: 10px;
+            box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .use-case {
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .use-case:hover {
+            transform: translateY(-10px);
+            background-color: #f9f9f9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #f4419a;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #d63384;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Multiple Route Mapping</h1>
+</header>
+
+<div class="container">
+    <div class="use-case">
+        <h2>Description</h2>
+        <p>Multiple route mapping involves providing users with various route options between two locations. This functionality enhances navigation systems by considering factors such as travel time, distance, and traffic conditions, allowing users to make informed decisions based on their preferences.</p>
+    </div>
+
+    <div class="use-case">
+        <h2>Key Features</h2>
+        <p><strong>Route Diversity:</strong> Users can choose from multiple suggested routes, each optimized based on different criteria like shortest path, fastest route, or traffic-free options.</p>
+        <p><strong>Real-Time Updates:</strong> Routes adapt to real-time data, including traffic congestion, road closures, and weather conditions, ensuring up-to-date suggestions.</p>
+        <p><strong>Customizable Preferences:</strong> Users can prioritize certain route attributes, such as avoiding toll roads, preferring scenic paths, or minimizing environmental impact.</p>
+    </div>
+
+    <div class="use-case">
+        <h2>Data Structures Used</h2>
+        <p><strong>Graph Representation:</strong> The road network is modeled as a graph where intersections are nodes and roads are edges. Each edge can have weights for distance, time, or traffic.</p>
+        <p><strong>Priority Queue (Min-Heap):</strong> Helps efficiently calculate shortest paths using algorithms like Dijkstra's or A* for multiple route generation.</p>
+        <p><strong>Adjacency List:</strong> Stores road connections and edge weights for better memory optimization.</p>
+    </div>
+
+    <div class="use-case">
+        <h2>Algorithms</h2>
+        <p><strong>Dijkstra’s Algorithm:</strong> Used to calculate the shortest route in terms of distance or time for single-source shortest path problems.</p>
+        <p><strong>A* Search Algorithm:</strong> Enhances Dijkstra’s with heuristics for faster computation, especially for large-scale maps.</p>
+        <p><strong>K-Shortest Paths Algorithm:</strong> Finds multiple optimal routes by iteratively calculating paths beyond the shortest one.</p>
+    </div>
+
+    <div class="use-case">
+        <h2>Benefits</h2>
+        <p>Empowers users to make informed travel choices.</p>
+        <p>Reduces travel stress by offering alternative paths during congestion or roadblocks.</p>
+        <p>Enhances flexibility, especially for users with specific travel needs.</p>
+    </div>
+
+    <div class="use-case">
+        <h2>Learn More</h2>
+        <a href="#" class="btn">Explore Algorithms</a>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 Multiple Route Mapping. All Rights Reserved. | <a href="#">Contact Us</a></p>
+</footer>
+
+</body>
+</html>
