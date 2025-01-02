@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Structures and Algorithms Course</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            padding: 0;
+            background-color: #000; /* Background color is black */
+            color: #fff; /* Text color is white */
+        }
+        h1, h2, h3 {
+            color: #ffcc00; /* Headings in yellow */
+        }
+        code {
+            background-color: #222; /* Dark background for code blocks */
+            color: #ff0000; /* Text in code blocks is red */
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        pre {
+            background-color: #222; /* Dark background for preformatted blocks */
+            color: #FFDAB9; /* Text in preformatted blocks is red */
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        ul {
+            margin: 10px 0;
+        }
+        li {
+            margin: 5px 0;
+        }
+        a {
+            color: #ffcc00; /* Links in yellow */
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+ <h1>Introduction to the Course</h1>
+    <p>This course provides an in-depth exploration of data structures and algorithms, focusing on their theoretical foundations and practical applications. Through structured learning, students are equipped with the skills to solve computational problems efficiently by understanding the principles behind different data storage, retrieval, and processing techniques.</p>
+
+    <h2>Data Structures and Algorithms</h2>
+    <p>The course covers fundamental and advanced data structures:</p>
+    <ul>
+        <li>Arrays</li>
+        <li>Linked lists</li>
+        <li>Stacks</li>
+        <li>Queues</li>
+        <li>Trees (AVL, BST, Red-Black trees, 2-3 trees)</li>
+        <li>Heaps</li>
+        <li>Tries</li>
+        <li>Graphs</li>
+        <li>Recursion and Iteration</li>
+        <li>Backtracking</li>
+        <li>Sorting (Merge sort, Quick sort, Heap sort)</li>
+        <li>Searching (Binary search)</li>
+        <li>Graph algorithms (DFS, BFS, Dijkstra's, Prim's, Kruskal's)</li>
+    </ul>
+
+    <h2>Connecting the Course with Real-Time Applications</h2>
+    <p>The knowledge from this course directly connects to real-world applications such as optimizing routes in map services, managing hierarchical data in databases, and developing efficient search algorithms for web engines. Understanding time and space complexity ensures scalable solutions for applications like e-commerce, healthcare systems, and financial modeling.</p>
+
+    <h3>1. Problems in Nature</h3>
+    <h4>Iteration</h4>
+    <p>Iteration refers to repeating a set of operations until a condition is met, commonly used in algorithmic problems such as traversing arrays.</p>
+    <pre><code>int findMax(int arr[], int size) {
+    if (size &lt;= 0) {
+        throw invalid_argument("Array size must be greater than zero.");
+    }
+
+    int max_value = arr[0];
+    for (int i = 1; i &lt; size; i++) {
+        if (arr[i] &gt; max_value) {
+            max_value = arr[i];
+        }
+    }
+    return max_value;
+}</code></pre>
+
+    <h4>Recursion</h4>
+    <p>Recursion involves solving a problem by breaking it down into smaller sub-problems. It is useful in problems like Fibonacci number computation.</p>
+    <pre><code>int fibonacci(int n) {
+    if (n &lt;= 1) {
+        return n;
+    }
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}</code></pre>
+
+    <h4>Backtracking</h4>
+    <p>Backtracking explores all possible solutions by trying different options and undoing steps when they don't lead to a valid solution, such as solving the N-Queens problem.</p>
+    <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+bool isSafe(int board[][10], int row, int col, int N) {
+    for (int i = 0; i &lt; row; i++) {
+        if (board[i][col] == 1 || 
+            (col - (row - i) &gt;= 0 && board[i][col - (row - i)] == 1) || 
+            (col + (row - i) &lt; N && board[i][col + (row - i)] == 1)) {
+            return false;
+        }
+    }
+    return true;
+}
+
+bool solveNQueens(int board[][10], int row, int N) {
+    if (row == N) {
+        for (int i = 0; i &lt; N; i++) {
+            for (int j = 0; j &lt; N; j++) {
+                if (board[i][j] == 1) cout &lt;&lt; "Q ";
+                else cout &lt;&lt; ". ";
+            }
+            cout &lt;&lt; endl;
+        }
+        cout &lt;&lt; endl;
+        return true;
+    }
+
+    bool res = false;
+    for (int col = 0; col &lt; N; col++) {
+        if (isSafe(board, row, col, N)) {
+            board[row][col] = 1;
+            res = solveNQueens(board, row + 1, N) || res;
+            board[row][col] = 0;
+        }
+    }
+    return res;
+}
+
+void solveNQueens(int N) {
+    int board[10][10] = {0};
+    if (!solveNQueens(board, 0, N)) {
+        cout &lt;&lt; "Solution does not exist!" &lt;&lt; endl;
+    }
+}
+
+int main() {
+    int N;
+    cout &lt;&lt; "Enter the value of N: ";
+    cin &gt;&gt; N;
+    solveNQueens(N);
+    return 0;
+}</code></pre>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Principles and Algorithms</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h2 {
+            color: #2c3e50;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            overflow-x: auto;
+        }
+        code {
+            color: #c7254e;
+            background-color: #f9f2f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        ul {
+            margin: 10px 0;
+        }
+        li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Design Principles and Algorithms</h1>
+
+    <h2>3. Design Principles</h2>
+    <h3>Modularity</h3>
+    <p>Modular design divides a program into smaller, independent components, which enhances code reusability and maintainability.</p>
+    <pre><code>class Database {
+    def connect(self):
+        pass
+
+    def execute_query(self, query):
+        pass
+}</code></pre>
+
+    <h3>Scalability</h3>
+    <p>Scalability ensures the system can grow to handle increased loads, either through vertical or horizontal scaling.</p>
+
+    <h3>Efficiency</h3>
+    <p>Efficiency aims to optimize the use of time and space, such as by choosing data structures like hash maps (O(1) time) for faster operations.</p>
+
+    <h2>4. Hierarchical Data Structures</h2>
+    <h3>Tree Types</h3>
+    <ul>
+        <li><strong>Binary Search Tree (BST):</strong> Efficient for searching, insertion, and deletion.</li>
+        <li><strong>AVL Trees:</strong> Self-balancing BSTs that ensure O(log n) complexity for operations.</li>
+        <li><strong>Trie:</strong> Used in applications like autocomplete for storing strings based on prefixes.</li>
+    </ul>
+
+    <h3>Use Cases</h3>
+    <ul>
+        <li><strong>Databases:</strong> B-trees for efficient indexing and searching.</li>
+        <li><strong>Memory Management:</strong> Heaps for managing memory allocation and priority queues.</li>
+    </ul>
+
+    <h2>5. Array Query Algorithms</h2>
+    <p>Arrays are widely used for storing data, and efficient algorithms help in performing range queries. Prefix sums and segment trees are common methods.</p>
+    <pre><code>void prefixSum(int arr[], int n) {
+    int prefix[n + 1]; 
+    prefix[0] = 0; 
+
+    for (int i = 1; i <= n; i++) {
+        prefix[i] = prefix[i - 1] + arr[i - 1];
+    }
+
+    for (int i = 0; i <= n; i++) {
+        cout &lt;&lt; prefix[i] &lt;&lt; " ";
+    }
+    cout &lt;&lt; endl;
+}</code></pre>
+
+    <h2>6. Trees vs. Graphs</h2>
+    <h3>Traversal Techniques</h3>
+    <ul>
+        <li><strong>DFS:</strong> Used in trees and graphs for exploring deep into the structure.</li>
+        <li><strong>BFS:</strong> Used in graphs for exploring nodes level by level.</li>
+    </ul>
+
+    <h3>Applications</h3>
+    <ul>
+        <li><strong>Trees:</strong> Used for hierarchical structures like file systems.</li>
+        <li><strong>Graphs:</strong> Used for representing networks, like social media or transportation systems.</li>
+    </ul>
+
+    <h2>7. Sorting and Searching</h2>
+    <h3>Sorting Algorithms</h3>
+    <ul>
+        <li><strong>Bubble Sort:</strong></li>
+    </ul>
+    <pre><code>ALGORITHM BubbleSort(A[0..n-1])
+for i <- 0 to n - 2 do
+    for j <- 0 to n - 2 - i do
+        if A[j+1] < A[j]
+            swap A[j] and A[j+1]</code></pre>
+
+    <ul>
+        <li><strong>Merge Sort:</strong> Efficient divide-and-conquer sorting algorithm with O(n log n) time complexity.</li>
+    </ul>
+    <pre><code>ALGORITHM MergeSort(A[0..n-1])
+if n > 1
+    copy A[0...|n/2| - 1 ] to B[0...|n/2| - 1]
+    copy A[ |n/2| ... n - 1 ] to C[0......| ̄ n/2  ̄| - 1]
+    MergeSort(B[0...|n/2| - 1] )
+    MergeSort(C[0......| ̄ n/2  ̄| - 1] )
+    Merge(B,C,A)</code></pre>
+
+    <h3>Quick Sort</h3>
+    <pre><code>#include <iostream>
+#include <vector>
+using namespace std;
+
+int partition(vector&amp; A, int l, int r) {
+    int p = A[l];
+    int i = l;
+    int j = r + 1;
+    while (true) {
+        do {
+            i++;
+        } while (i <= r &amp;&amp; A[i] < p);
+
+        do {
+            j--;
+        } while (A[j] > p);
+
+        if (i >= j) break;
+        swap(A[i], A[j]);
+    }
+    swap(A[l], A[j]);
+    return j;
+}
+
+void quickSort(vector&amp; A, int l, int r) {
+    if (l < r) {
+        int s = partition(A, l, r);
+        quickSort(A, l, s - 1);
+        quickSort(A, s + 1, r);
+    }
+}
+
+int main() {
+    vector A = {10, 7, 8, 9, 1, 5};
+    quickSort(A, 0, A.size() - 1);
+    for (int x : A) cout &lt;&lt; x &lt;&lt; " ";
+    return 0;
+}</code></pre>
+
+    <h3>Searching</h3>
+    <pre><code>int binarySearch(const vector&amp; arr, int key) {
+    int left = 0, right = arr.size() - 1;
+    while (left <= right) {
+        int mid = left + (right - left) / 2;
+        if (arr[mid] == key) return mid;
+        if (arr[mid] < key) left = mid + 1;
+        else right = mid - 1;
+    }
+    return -1;
+}</code></pre>
+
+    <h2>8. Graph Algorithms</h2>
+    <h3>Spanning Trees</h3>
+    <ul>
+        <li><strong>Kruskal’s Algorithm:</strong></li>
+    </ul>
+    <pre><code>int Find(int parent[], int i) {
+    if (parent[i] != i)
+        parent[i] = Find(parent, parent[i]);
+    return parent[i];
+}
+
+void Union(int parent[], int rank[], int x, int y) {
+    int xroot = Find(parent, x);
+    int yroot = Find(parent, y);
+
+    if (rank[xroot] < rank[yroot])
+        parent[xroot] = yroot;
+    else if (rank[xroot] > rank[yroot])
+        parent[yroot] = xroot;
+    else {
+        parent[yroot] = xroot;
+        rank[xroot]++;
+    }
+}
+
+void KruskalMST(Edge edges[], int E, int V) {
+    int weights[E], idx[E];
+    for (int i = 0; i < E; i++) {
+        weights[i] = edges[i].weight;
+        idx[i] = i;
+    }
+
+    MergeSort(weights, idx, 0, E - 1);
+
+    int parent[V], rank[V];
+    for (int i = 0; i < V; i++) {
+        parent[i] = i;
+        rank[i] = 0;
+    }
+
+    Edge mst[V - 1];
+    int mstSize = 0;
+
+    for (int i = 0; i < E &amp;&amp; mstSize < V - 1; i++) {
+        Edge edge = edges[idx[i]];
+        int x = Find(parent, edge.sr c);
+        int y = Find(parent, edge.dest);
+
+        if (x != y) {
+            mst[mstSize++] = edge;
+            Union(parent, rank, x, y);
+        }
+    }
+
+    cout &lt;&lt; "Edges in the Minimum Spanning Tree:\n";
+    int cost = 0;
+    for (int i = 0; i < mstSize; i++) {
+        cout &lt;&lt; mst[i].src &lt;&lt; " -- " &lt;&lt; mst[i].dest &lt;&lt; " == " &lt;&lt; mst[i].weight &lt;&lt; endl;
+        cost += mst[i].weight;
+    }
+    cout &lt;&lt; "Cost = " &lt;&lt; cost &lt;&lt; endl;
+}</code></pre>
+
+    <h3>Shortest Path Algorithms</h3>
+    <p><strong>Dijkstra's Algorithm:</strong> Finds the shortest path between two points in a graph, used in GPS navigation and routing applications.</p>
+    <pre><code>#include <iostream>
+#include <vector>
+#define MAX 9999
+using namespace std;
+
+class dijkstra {
+public:
+    int dist[100];
+    int path[100];
+    int visited[100] = {0};
+    int v;
+    int src;
+
+    void read(int cost[50][50]);
+    void initialize(int cost[50][50]);
+};
+
+void dijkstra::initialize(int cost[50][50]) {
+    for (int i = 0; i < v; i++) {
+        path[i] = src;
+        dist[i] = cost[src][i];
+        visited[i] = 0;
+    }
+    visited[src] = 1;
+}
+
+void dijkstra::read(int cost[50][50]) {
+    cout &lt;&lt; "Enter the cost matrix:" &lt;&lt; endl;
+    for (int i = 0; i < v; i++) {
+        for (int j = 0; j < v; j++) {
+            cin &gt;&gt; cost[i][j];
+        }
+    }
+}
+
+int main() {
+    int cost[50][50];
+    dijkstra d;
+
+    cout &lt;&lt; "Enter the number of vertices: ";
+    cin &gt;&gt; d.v;
+
+    d.read(cost);
+
+    cout &lt;&lt; "Enter the source vertex: ";
+    cin &gt;&gt; d.src;
+
+    d.initialize(cost);
+
+    cout &lt;&lt; "Initialized distances from source: ";
+    for (int i = 0; i < d.v; i++) {
+        cout &lt;&lt; d.dist[i] &lt;&lt; " ";
+    }
+    cout &lt;&lt; endl;
+
+    return 0;
+}</code></pre>
+
+    <h2>9. Algorithm Design Techniques</h2>
+    <ul>
+        <li><strong>Divide and Conquer:</strong> Breaks problems into smaller sub-problems, solves them independently, and combines results.</li>
+        <li><strong>Greedy Algorithms:</strong> Makes the best choice at each step in the hope of finding the global optimum.</li>
+        <li><strong>Dynamic Programming:</strong> Solves problems by storing the results of overlapping subproblems to avoid redundant work.</li>
+    </ul>
+
+    <h2>Reflections</h2>
+    <p>Learning how to break down complex problems into smaller components allows for better problem-solving and optimization. Balancing optimization with simplicity ensures maintainability while delivering efficient solutions. Adapting solutions across different challenges involves choosing the right algorithm for the problem at hand.</p>
+</body>
+</html>
+
+    <!-- Add similar sections for the remaining parts of the content -->
+
+</body>
+</html>
