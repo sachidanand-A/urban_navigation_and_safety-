@@ -117,20 +117,18 @@
 <div class="container">
     <div class="use-case">
         <h2>Description</h2>
-        <p>Multiple route mapping involves providing users with various route options between two locations. This functionality enhances navigation systems by considering factors such as travel time, distance, and traffic conditions, allowing users to make informed decisions based on their preferences.</p>
+        <p>Multiple route mapping involves providing users with various route options between two locations. This functionality enhances navigation systems by considering factors such as travel time, distance, allowing users to make informed decisions based on their preferences.</p>
     </div>
 
     <div class="use-case">
         <h2>Key Features</h2>
         <p><strong>Route Diversity:</strong> Users can choose from multiple suggested routes, each optimized based on different criteria like shortest path, fastest route, or traffic-free options.</p>
-        <p><strong>Real-Time Updates:</strong> Routes adapt to real-time data, including traffic congestion, road closures, and weather conditions, ensuring up-to-date suggestions.</p>
         <p><strong>Customizable Preferences:</strong> Users can prioritize certain route attributes, such as avoiding toll roads, preferring scenic paths, or minimizing environmental impact.</p>
     </div>
 
     <div class="use-case">
         <h2>Data Structures Used</h2>
-        <p><strong>Graph Representation:</strong> The road network is modeled as a graph where intersections are nodes and roads are edges. Each edge can have weights for distance, time, or traffic.</p>
-        <p><strong>Priority Queue (Min-Heap):</strong> Helps efficiently calculate shortest paths using algorithms like Dijkstra's or A* for multiple route generation.</p>
+        <p><strong>Priority Queue:</strong> Helps efficiently traverse in the adjacency list for multiple route generation.</p>
         <p><strong>Adjacency List:</strong> Stores road connections and edge weights for better memory optimization.</p>
     </div>
 
@@ -138,7 +136,6 @@
         <h2>Algorithms Used</h2>
         <ul>
             <li><strong>Depth First Search:</strong> Uses DFS to find multiple routes and show the routes with distances and it may also the estimated time .</li>
-            <li><strong>A* Search Algorithm:</strong> Enhances Dijkstra’s with heuristics for faster computation, especially for large-scale maps.</li>
             <li><strong>K-Shortest Paths Algorithm:</strong> Finds multiple optimal routes by iteratively calculating paths beyond the shortest one.</li>
         </ul>
     </div>
